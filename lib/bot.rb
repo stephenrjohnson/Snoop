@@ -1,12 +1,13 @@
 require_relative 'cinchplugin.rb'
+require_relative 'cinchthread.rb'
 require 'yaml'
-require 'rbconfig'
 
 module Snoop
   class Bot
     ##load the plugins
       def initialize(options)
         config(options)
+        threads
         run
       end
 
@@ -17,6 +18,18 @@ module Snoop
           exit!
         else
           $config = YAML.load_file(config_file)
+        end
+        plugins = getallplugins
+        puts plugins.inspect
+        @bot = Cinch::Bot.new do
+          configure do |c|
+            c.server   = $config['bot']['server']
+            c.port     = $config['bot']['port']
+            c.nick     = $config['bot']['nick']
+            c.channels = $config['bot']['channels']
+            c.verbose  = $config['bot']['verbose']
+            c.plugins.plugins  = plugins
+          end
         end
       end
 
@@ -39,18 +52,22 @@ module Snoop
       end
 
       def run
-        plugins = getallplugins
-        bot = Cinch::Bot.new do
-          configure do |c|
-            c.server   = $config['bot']['server']
-            c.port     = $config['bot']['port']
-            c.nick     = $config['bot']['nick']
-            c.channels = $config['bot']['channels']
-            c.verbose  = $config['bot']['verbose']
-            c.plugins.plugins  = plugins
+        @bot.start
+      end
+
+      def threads
+        Dir.glob(File.expand_path(".")+'/lib/threads/*.rb') do |item|
+          require item
+        end
+        Object.constants().map do |const|
+          begin
+            klass = eval("#{const}")
+            if klass.superclass.to_s == "CinchThread"
+             Thread.new{ klass.new(@bot).start }
+            end
+          rescue
           end
         end
-        bot.start
       end
   end
 end

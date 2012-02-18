@@ -3,6 +3,8 @@ source "http://rubygems.org"
 
 gem 'cinch'
 gem 'simple-rss'
+gem 'rack'
+gem 'webrick'
 
 group :test do
   gem "rspec"
