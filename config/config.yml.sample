@@ -1,0 +1,9 @@
+bot:
+    server:   localhost
+    port:     6667
+    nick:     cinchbot
+    channels: ['#channel']
+    verbose:  true
+redmine:
+    server:   https://redmine
+    apikey:   5b
