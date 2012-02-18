@@ -6,7 +6,7 @@ class Help < CinchPlugin
 
   match /h(?:elp)?$/, method: :listall
 
-  def self.listall(m)
+  def listall(m)
     @bot.plugins.each do |plugin|
       help_message = plugin.class.instance_variable_get(:@__cinch_help_message)
       if help_message
