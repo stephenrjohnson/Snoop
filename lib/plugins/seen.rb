@@ -2,7 +2,7 @@ class Seen < CinchPlugin
   include Cinch::Plugin
   listen_to :channel
   plugin "seen"
-  match /seen (.+)/
+  match /seen (.+)/,  method: :search
   help "!seen <nick> - Check when a nick was last seen"
   
   def initialize(*args)
@@ -12,18 +12,26 @@ class Seen < CinchPlugin
 
   def listen(m)
     @users[m.user.nick] = "#{Time.now.asctime}] #{m.user} was seen in #{m.channel} saying #{m.message}"
+  end 
+
+  def search(m, nick)
+    respond(m, message(m,nick))
   end
 
-  def execute(m, nick)
+  def message(m, nick)
     if nick == @bot.nick
-      m.reply "That's me!"
+      message = "That's me!"
     elsif nick == m.user.nick
-      m.reply "That's you!"
+      message = "That's you!"
     elsif @users.key?(nick)
-      m.reply @users[nick].to_s
+     message = @users[nick].to_s
     else
-      m.reply "I haven't seen #{nick}"
-      @bot.debug @users
+      message =  "I haven't seen #{nick}"
     end
+    return message 
+  end
+
+  def respond (m, message)
+     m.reply message
   end
 end
