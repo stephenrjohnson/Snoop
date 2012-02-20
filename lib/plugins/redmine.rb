@@ -1,33 +1,41 @@
 require 'open-uri'
 require 'simple-rss'
+require 'date'
+require 'time-ago-in-words'
 
-class Redmine < CinchPlugin
+class RedmineWatcher < CinchPlugin
   include Cinch::Plugin
   plugin "redmine"
   listen_to :channel
   match /watch (.+)/,  method: :add
   match /unwatch (.+)/,  method: :remove
-  help "!watch [name] - Watch a redmine project \n!unwatch [name] - unwatch a redmine project"
+  match /watching/, method: :watching
+  help "!watch <name> - Watch a redmine project \n!unwatch [name] - unwatch a redmine project\n!watching list all watched redmine project"
 
-  timer 120, method: :fetchupdates
+  timer $config['redminewatcher']['fetchint'], method: :fetchupdates
 
   def initialize(*args)
     super
     @watched = {}
     @times = {}
-    @redmineurl = "#{$config['redmine']['server']}/projects/"
-    @rsskey = "/activity.atom?key=#{$config['redmine']['apikey']}&"
-    @option = "show_changesets=1&show_documents=1&show_files=1&show_hudson=1&show_messages=1&show_news=1&show_time_entries=1&show_wiki_edits=1"
+    @redmineurl = "#{$config['redminewatcher']['server']}/projects/"
+    @questtring = "/activity.atom?key=#{$config['redminewatcher']['apikey']}&#{$config['redminewatcher']['options']}"
   end
-
 
   def fetchupdates
     @bot.debug "featching updates #{@watched}"
     @watched.each   do |key, value|
       begin
         feed = fetchfeed(key)
-        if timeisnew?(key, feed.first[:updated])
-          Channel(@watched[key][:channel]).send "#{feed.first[:title]} #{feed.first[:updated]}"
+        if feed.first[:updated] != @times[key]
+          feed.first(5).each do |item|
+            if item[:updated] != @times[key]
+              author = item[:author].split("\n")
+              friendlydate = item[:updated].time_ago_in_words
+              Channel(@watched[key][:channel]).send "#{key} #{string_truncate(item[:title])} #{friendlydate} #{author[0].strip}<#{author[1].strip}>"
+            end
+          end
+           @times[key] = feed.first[:updated]
         end
       rescue OpenURI::HTTPError
         Channel(@watched[key][:channel]).send "Remove #{key} as url no longer valid"
@@ -37,7 +45,7 @@ class Redmine < CinchPlugin
   end
 
   def fetchfeed(site)
-    rss = SimpleRSS.parse(open(@redmineurl+site+@rsskey+@option))
+    rss = SimpleRSS.parse(open("#{@redmineurl}#{site}#{@questtring}"))
     return rss.items
   end
 
@@ -53,17 +61,15 @@ class Redmine < CinchPlugin
   def add(m, watch)
     if @watched.key?(watch)
       m.reply "Already watching #{watch} #{@watched[watch][:user]} told me to, annoucing in #{@watched[watch][:channel]}"
-      @bot.debug  "Watching #{@watched[watch]}"
-      
     else
       begin
         fetchfeed(watch)
         @watched[watch] = {user: m.user.nick, channel: m.channel}
         m.reply "Watching #{watch}"
-        @bot.debug  "Watching #{@watched[watch]}"
         fetchupdates
       rescue OpenURI::HTTPError
         m.reply "Cant get redmine site for #{watch}"
+        @bot.debug  "Error Waatching #{watch}"
       end
     end
   end
@@ -78,5 +84,19 @@ class Redmine < CinchPlugin
       @bot.debug  "Not watching #{watch}"
     end
   end
-
+  
+  def watching(m)
+    m.reply "Watching ..."
+    @watched.each do |key, item|
+      m.reply "#{key} in #{item[:channel]} by request of  #{item[:user]}"
+    end
+  end
+  def string_truncate(text, length = 65, end_string = ' ...')
+    return if text == nil
+    if text.length > length
+      text.slice!(0, length)+"..."
+    else
+      text
+    end
+  end
 end

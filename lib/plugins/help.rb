@@ -2,7 +2,7 @@ class Help < CinchPlugin
   include Cinch::Plugin
 
   plugin "help"
-  help "!help [name] - Get information about a command (or all commands with no name)"
+  help "!help <name> - Get information about a command (or all commands with no name)"
 
   match /h(?:elp)?$/, method: :listall
 
