@@ -4,9 +4,11 @@ bot:
     nick:     cinchbot
     channels: ['#channel']
     verbose:  true
-redmine:
+redminewatcher:
     server:   https://redmine
     apikey:   5b
+    options:  show_changesets=1&show_hudson=1&show_issues=1
+    fetchint:   120
 webinterface:
     port:     9292
     key: 123456
