@@ -5,6 +5,8 @@ gem 'cinch'
 gem 'simple-rss'
 gem 'rack'
 gem 'webrick'
+gem 'nokogiri'
+gem 'time-ago-in-words'
 
 group :test do
   gem "rspec"
