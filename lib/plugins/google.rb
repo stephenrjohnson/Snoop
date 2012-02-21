@@ -13,8 +13,6 @@ class Google < CinchPlugin
   match /gimage (.+)/, method: :image
   help "!google <query> - Search google for <query>\n!gmaps <query> - Produce google maps link\n!gvideo <query> - Search google video for <query>\n!gimage <query> - Search google images for <query>"
 
-  match /google (.+)/
-
   def search(query,type)
     urlquery = CGI::escape(query)
     if type == "web"

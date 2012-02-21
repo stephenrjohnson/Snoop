@@ -22,7 +22,6 @@ class RedmineWatcher < CinchPlugin
   end
 
   def fetchupdates
-    @bot.debug "featching updates #{@watched}"
     @watched.each   do |key, value|
       begin
         feed = fetchfeed(key)
