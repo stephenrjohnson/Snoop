@@ -11,7 +11,6 @@ class RedmineWatcher < CinchPlugin
   match /unwatch (.+)/,  method: :remove
   match /watching/, method: :watching
   help "!watch <name> - Watch a redmine project \n!unwatch [name] - unwatch a redmine project\n!watching list all watched redmine project"
-
   timer $config['redminewatcher']['fetchint'], method: :fetchupdates
 
   def initialize(*args)
@@ -89,14 +88,6 @@ class RedmineWatcher < CinchPlugin
     m.reply "Watching ..."
     @watched.each do |key, item|
       m.reply "#{key} in #{item[:channel]} by request of  #{item[:user]}"
-    end
-  end
-  def string_truncate(text, length = 65, end_string = ' ...')
-    return if text == nil
-    if text.length > length
-      text.slice!(0, length)+"..."
-    else
-      text
     end
   end
 end
