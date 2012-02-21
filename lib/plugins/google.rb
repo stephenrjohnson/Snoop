@@ -6,21 +6,46 @@ require 'cgi'
 class Google < CinchPlugin
   include Cinch::Plugin
   plugin "google"
-  help "!google <query> - Search google for <query>"
+  match /watch (.+)/,  method: :add
+  match /gmaps (.+)/,  method: :map
+  match /google (.+)/, method: :web
+  match /gvideo (.+)/, method: :video
+  match /gimage (.+)/, method: :image
+  help "!google <query> - Search google for <query>\n!gmaps <query> - Produce google maps link\n!gvideo <query> - Search google video for <query>\n!gimage <query> - Search google images for <query>"
 
   match /google (.+)/
 
-  def search(query)
+  def search(query,type)
     urlquery = CGI::escape(query)
-    results = JSON.parse(open("http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=#{urlquery}").read)
+    if type == "web"
+      fullurl="http://www.google.com/search?q=#{urlquery}"
+    elsif type == "video"
+      fullurl="http://www.google.com/search?tbm=vid&q=#{urlquery}"
+    elsif type == "images"
+       fullurl="http://www.google.com/search?tbm=isch&q=#{urlquery}"
+    end
+      
+    results = JSON.parse(open("http://ajax.googleapis.com/ajax/services/search/#{type}?v=1.0&q=#{urlquery}").read)
     firstresult = results["responseData"]['results'].first
-    "Google Results for #{query}
+    "Google #{type} Search Results for #{query}
     Title - #{CGI::unescapeHTML(firstresult['titleNoFormatting'])}
     Url - #{firstresult['url']}
-    Full Search http://www.google.com/search?q=#{urlquery}"
+    Full Search #{fullurl}"
   end
 
-  def execute(m, query)
-    m.reply(search(query))
+  def map(m, query)
+     m.reply("http://map.google.com/maps?q=#{CGI.escape(query)}")
+  end
+
+  def video(m, query)
+     m.reply(search(query,"video"))
+  end
+
+  def image(m, query)
+     m.reply(search(query,"images"))
+  end
+
+  def web(m, query)
+    m.reply(search(query,"web"))
   end
 end
