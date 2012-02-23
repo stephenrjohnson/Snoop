@@ -7,6 +7,7 @@ gem 'rack'
 gem 'webrick'
 gem 'nokogiri'
 gem 'time-ago-in-words'
+gem 'nagiosharder'
 
 group :test do
   gem "rspec"
