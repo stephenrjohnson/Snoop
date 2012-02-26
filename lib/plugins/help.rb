@@ -1,16 +1,14 @@
 class Help < CinchPlugin
   include Cinch::Plugin
+  set :help, "!help <name> - Get information about a command (or all commands with no name)"
 
-  plugin "help"
-  help "!help <name> - Get information about a command (or all commands with no name)"
+  match /help$/, method: :without_name
 
-  match /h(?:elp)?$/, method: :listall
-
-  def listall(m)
+  def without_name(m)
     @bot.plugins.each do |plugin|
-      help_message = plugin.class.instance_variable_get(:@__cinch_help_message)
+      help_message = plugin.class.help
       if help_message
-        name = plugin.class.instance_variable_get(:@__cinch_name)
+        name = plugin.class.plugin_name
         m.reply "#{help_message}"
       end
     end

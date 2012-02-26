@@ -3,10 +3,10 @@ require 'nagiosharder'
 
 class Nagios < CinchPlugin
   include Cinch::Plugin
-  plugin "nagios"
   match /nagios$/i,  method: :list
   match /nagios (.+)/,  method: :alerts
-  help "!nagios - List servers\n!nagios <server> - List problems on that instances"
+  set :help, "!nagios - List servers\n!nagios <server> - List problems on that instances"
+  
 
   def list(m)
     m.reply("Nagios instances")
