@@ -12,4 +12,18 @@ redminewatcher:
 webinterface:
     port:     9292
     key: 123456
+nagios:
+    servers:
+        1:
+            url:
+            timeformat:
+            username:
+            password:
+            description:
+        2:
+            url:
+            timeformat:
+            username:
+            password:
+            description:
 
