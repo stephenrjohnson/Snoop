@@ -1,16 +1,15 @@
 class Seen < CinchPlugin
   include Cinch::Plugin
-  listen_to :channel
-  plugin "seen"
+  listen_to :channel,  method: :log
   match /seen (.+)/,  method: :search
-  help "!seen <nick> - Check when a nick was last seen"
+  set :help, "!seen <nick> - Check when a nick was last seen"
   
   def initialize(*args)
     super
     @users = {}
   end
 
-  def listen(m)
+  def log(m)
     @users[m.user.nick] = "#{Time.now.asctime}] #{m.user} was seen in #{m.channel} saying #{m.message}"
   end 
 

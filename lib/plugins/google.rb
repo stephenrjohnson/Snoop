@@ -5,15 +5,12 @@ require 'cgi'
 
 class Google < CinchPlugin
   include Cinch::Plugin
-  plugin "google"
   match /watch (.+)/,  method: :add
   match /gmaps (.+)/,  method: :map
   match /google (.+)/, method: :web
   match /gvideo (.+)/, method: :video
   match /gimage (.+)/, method: :image
-  help "!google <query> - Search google for <query>\n!gmaps <query> - Produce google maps link\n!gvideo <query> - Search google video for <query>\n!gimage <query> - Search google images for <query>"
-
-  match /google (.+)/
+  set :help, "!google <query> - Search google for <query>\n!gmaps <query> - Produce google maps link\n!gvideo <query> - Search google video for <query>\n!gimage <query> - Search google images for <query>"
 
   def search(query,type)
     urlquery = CGI::escape(query)

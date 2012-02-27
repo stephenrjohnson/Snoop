@@ -5,12 +5,11 @@ require 'time-ago-in-words'
 
 class RedmineWatcher < CinchPlugin
   include Cinch::Plugin
-  plugin "redmine"
-  listen_to :channel
   match /watch (.+)/,  method: :add
   match /unwatch (.+)/,  method: :remove
   match /watching/, method: :watching
-  help "!watch <name> - Watch a redmine project \n!unwatch [name] - unwatch a redmine project\n!watching list all watched redmine project"
+  set :required_options, [$config['redminewatcher']['fetchint'], $config['redminewatcher']['server'],$config['redminewatcher']['options']]
+  set :help, "!watch <name> - Watch a redmine project \n!unwatch [name] - unwatch a redmine project\n!watching list all watched redmine project"
   timer $config['redminewatcher']['fetchint'], method: :fetchupdates
 
   def initialize(*args)
@@ -22,7 +21,6 @@ class RedmineWatcher < CinchPlugin
   end
 
   def fetchupdates
-    @bot.debug "featching updates #{@watched}"
     @watched.each   do |key, value|
       begin
         feed = fetchfeed(key)

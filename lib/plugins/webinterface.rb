@@ -1,4 +1,4 @@
-class WebInterfacePlugin < CinchPlugin
+class WebInterface < CinchPlugin
   include Cinch::Plugin
 
   listen_to :webmessage
