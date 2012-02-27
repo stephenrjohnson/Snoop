@@ -10,13 +10,14 @@ class Nagios < CinchPlugin
 
   def list(m)
     m.reply("Nagios instances")
-    $config['nagios']['servers'].each do |key, instance|
+    
+    Settings.nagios.servers.each do |key, instance|
       m.reply("    Server #{key} : #{instance['description']}")
     end
   end
 
   def alerts(m, query)
-    if $config['nagios']['servers'].key?(query)
+    if Settings.nagios.servers.key?(query)
       begin
          problems(query).each do |problem|
           m.reply("#{problem['host']}: #{problem['duration']} #{problem['service']} #{problem['status']} \n url #{problem['service_extinfo_url']}")
@@ -29,10 +30,11 @@ class Nagios < CinchPlugin
   end
 
   def problems(site)
-    url = $config['nagios']['servers']["#{site}"]['url']
-    username = $config['nagios']['servers']["#{site}"]['username']
-    password = $config['nagios']['servers']["#{site}"]['password']
-    timeformat = $config['nagios']['servers']["#{site}"]['timeformat']
+    url = 
+    Settings.nagios.servers.send(site).url
+    username = Settings.nagios.servers.send(site).username
+    password = Settings.nagios.servers.send(site).password
+    timeformat = Settings.nagios.servers.send(site).timeformat
     site = NagiosHarder::Site.new(url,username,password)
     site.nagios_time_format = timeformat
     return site.service_status(:all_problems)

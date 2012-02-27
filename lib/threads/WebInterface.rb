@@ -6,8 +6,7 @@ class WebInterfaceThread < CinchThread
 
   def start
   	  @bot.debug "webserver starting"
-      Rack::Handler::WEBrick.run self, :Port => $config['webinterface']['port']
-      #
+      Rack::Handler::WEBrick.run self, :Port => Settings.webinterface.port
   end
 
   def call(env)

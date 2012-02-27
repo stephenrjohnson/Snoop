@@ -5,7 +5,7 @@ require 'cgi'
 
 class Google < CinchPlugin
   include Cinch::Plugin
-  match /watch (.+)/,  method: :add
+  
   match /gmaps (.+)/,  method: :map
   match /google (.+)/, method: :web
   match /gvideo (.+)/, method: :video

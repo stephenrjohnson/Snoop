@@ -8,16 +8,16 @@ class RedmineWatcher < CinchPlugin
   match /watch (.+)/,  method: :add
   match /unwatch (.+)/,  method: :remove
   match /watching/, method: :watching
-  set :required_options, [$config['redminewatcher']['fetchint'], $config['redminewatcher']['server'],$config['redminewatcher']['options']]
+
   set :help, "!watch <name> - Watch a redmine project \n!unwatch [name] - unwatch a redmine project\n!watching list all watched redmine project"
-  timer $config['redminewatcher']['fetchint'], method: :fetchupdates
+  timer Settings.redminewatcher.fetchint, method: :fetchupdates
 
   def initialize(*args)
     super
     @watched = {}
     @times = {}
-    @redmineurl = "#{$config['redminewatcher']['server']}/projects/"
-    @questtring = "/activity.atom?key=#{$config['redminewatcher']['apikey']}&#{$config['redminewatcher']['options']}"
+    @redmineurl = "#{Settings.redminewatcher.server}/projects/"
+    @questtring = "/activity.atom?key=#{Settings.redminewatcher.apikey}&#{Settings.redminewatcher.options}"
   end
 
   def fetchupdates
@@ -29,7 +29,7 @@ class RedmineWatcher < CinchPlugin
             if item[:updated] != @times[key]
               author = item[:author].split("\n")
               friendlydate = item[:updated].time_ago_in_words
-              Channel(@watched[key][:channel]).send "#{key} #{string_truncate(item[:title])} #{friendlydate} #{author[0].strip}<#{author[1].strip}>"
+              Channel(@watched[key][:channel]).send "#{key} #{string_truncate(item[:title])} #{friendlydate} #{author[0].strip}<#{author[1] ? author[1].strip : "" }>"
             end
           end
            @times[key] = feed.first[:updated]
