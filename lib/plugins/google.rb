@@ -20,6 +20,8 @@ class Google < CinchPlugin
       fullurl="http://www.google.com/search?tbm=vid&q=#{urlquery}"
     elsif type == "images"
        fullurl="http://www.google.com/search?tbm=isch&q=#{urlquery}"
+    elsif type == "map"
+      return "http://map.google.com/maps?q=#{CGI.escape(query)}"
     end
       
     results = JSON.parse(open("http://ajax.googleapis.com/ajax/services/search/#{type}?v=1.0&q=#{urlquery}").read)
@@ -31,7 +33,7 @@ class Google < CinchPlugin
   end
 
   def map(m, query)
-     m.reply("http://map.google.com/maps?q=#{CGI.escape(query)}")
+     m.reply()
   end
 
   def video(m, query)

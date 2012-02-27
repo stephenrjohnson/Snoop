@@ -1,0 +1,54 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://ajax.googleapis.com:80/ajax/services/search/web?q=cinch%20ruby&v=1.0
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Mon, 27 Feb 2012 13:45:58 GMT
+      content-type:
+      - text/javascript; charset=utf-8
+      x-embedded-status:
+      - '200'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+      transfer-encoding:
+      - chunked
+    body: ! '{"responseData": {"results":[{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://www.rubyinside.com/cinch-a-ruby-irc-bot-building-framework-3223.html","url":"http://www.rubyinside.com/cinch-a-ruby-irc-bot-building-framework-3223.html","visibleUrl":"www.rubyinside.com","cacheUrl":"http://www.google.com/search?q\u003dcache:k1DDvQc97OYJ:www.rubyinside.com","title":"\u003cb\u003eCinch\u003c/b\u003e:
+      A \u003cb\u003eRuby\u003c/b\u003e IRC Bot Building Framework","titleNoFormatting":"Cinch:
+      A Ruby IRC Bot Building Framework","content":"By Peter Cooper / April 27, 2010.
+      \u003cb\u003eCinch\u003c/b\u003e is a new \u003cb\u003eRuby\u003c/b\u003e \u0026quot;microframework\u0026quot;
+      for   creating IRC bots. Effectively, \u003cb\u003eCinch\u003c/b\u003e is a
+      library that both abstracts away all of the \u003cb\u003e...\u003c/b\u003e"},{"GsearchResultClass":"GwebSearch","unescapedUrl":"https://github.com/cinchrb/cinch","url":"https://github.com/cinchrb/cinch","visibleUrl":"github.com","cacheUrl":"http://www.google.com/search?q\u003dcache:6D8S2wk-7bEJ:github.com","title":"cinchrb/\u003cb\u003ecinch\u003c/b\u003e
+      - GitHub","titleNoFormatting":"cinchrb/cinch - GitHub","content":"\u003cb\u003eCinch\u003c/b\u003e
+      is an IRC Bot Building Framework for quickly creating IRC bots in \u003cb\u003eRuby\u003c/b\u003e   with
+      minimal effort. It provides a simple interface based on plugins and rules."},{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://rubygems.org/gems/cinch","url":"http://rubygems.org/gems/cinch","visibleUrl":"rubygems.org","cacheUrl":"http://www.google.com/search?q\u003dcache:11-jqGK76TsJ:rubygems.org","title":"\u003cb\u003ecinch\u003c/b\u003e
+      | RubyGems.org | your community gem host","titleNoFormatting":"cinch | RubyGems.org
+      | your community gem host","content":"\u003cb\u003ecinch\u003c/b\u003e. 1.1.3.
+      A simple, friendly DSL for creating IRC bots. installgem install \u003cb\u003ecinch\u003c/b\u003e.   Download
+      Subscribe Stats. Authors. Lee Jarvis, Dominik Honnef. 13719 total \u003cb\u003e...\u003c/b\u003e"},{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://ruby.about.com/b/2010/05/10/irc-bots-are-a-cinch.htm","url":"http://ruby.about.com/b/2010/05/10/irc-bots-are-a-cinch.htm","visibleUrl":"ruby.about.com","cacheUrl":"http://www.google.com/search?q\u003dcache:0zCogl6FHMIJ:ruby.about.com","title":"IRC
+      Bots are a \u003cb\u003eCinch\u003c/b\u003e - \u003cb\u003eRuby\u003c/b\u003e
+      - About.com","titleNoFormatting":"IRC Bots are a Cinch - Ruby - About.com","content":"May
+      10, 2010 \u003cb\u003e...\u003c/b\u003e For many of you out there, IRC is a
+      major form of communication for you. And of   course, one of the great things
+      about IRC is that it\u0026#39;s an open \u003cb\u003e...\u003c/b\u003e"}],"cursor":{"resultCount":"27,000","pages":[{"start":"0","label":1},{"start":"4","label":2},{"start":"8","label":3},{"start":"12","label":4},{"start":"16","label":5},{"start":"20","label":6},{"start":"24","label":7},{"start":"28","label":8}],"estimatedResultCount":"27000","currentPageIndex":0,"moreResultsUrl":"http://www.google.com/search?oe\u003dutf8\u0026ie\u003dutf8\u0026source\u003duds\u0026start\u003d0\u0026hl\u003den\u0026q\u003dcinch+ruby","searchResultTime":"0.36"}},
+      "responseDetails": null, "responseStatus": 200}'
+    http_version: '1.1'

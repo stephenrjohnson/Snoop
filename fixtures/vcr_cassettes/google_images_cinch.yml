@@ -1,0 +1,56 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://ajax.googleapis.com:80/ajax/services/search/images?q=darth%20wat&v=1.0
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Mon, 27 Feb 2012 13:45:58 GMT
+      content-type:
+      - text/javascript; charset=utf-8
+      x-embedded-status:
+      - '200'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+      transfer-encoding:
+      - chunked
+    body: ! '{"responseData": {"results":[{"GsearchResultClass":"GimageSearch","width":"400","height":"421","imageId":"ANd9GcRulhmVMAkWZCOC7qB-90RIMQo2Ut1G8eAAUXL8ETr8XtgysMW73SB5iwE","tbWidth":"119","tbHeight":"125","unescapedUrl":"http://cdn.shopify.com/s/files/1/0070/7032/files/darth_wat_grande.jpg?113129","url":"http://cdn.shopify.com/s/files/1/0070/7032/files/darth_wat_grande.jpg%3F113129","visibleUrl":"www.shopify.com","title":"\u003cb\u003eWAT\u003c/b\u003e?
+      A Funny Look at Ruby and JavaScript Oddities – Shopify","titleNoFormatting":"WAT?
+      A Funny Look at Ruby and JavaScript Oddities – Shopify","originalContextUrl":"http://www.shopify.com/technology/5370262-wat-a-funny-look-at-ruby-and-javascript-oddities","content":"The
+      concept of \u003cb\u003ewat\u003c/b\u003e is covered","contentNoFormatting":"The
+      concept of wat is covered","tbUrl":"http://t0.gstatic.com/images?q\u003dtbn:ANd9GcRulhmVMAkWZCOC7qB-90RIMQo2Ut1G8eAAUXL8ETr8XtgysMW73SB5iwE"},{"GsearchResultClass":"GimageSearch","width":"478","height":"360","imageId":"ANd9GcQKC0bxIyESu93cTRSWxWuoZYpmJnCwisNtTw1hZXy-0r7RBlkeccuhk6SE","tbWidth":"129","tbHeight":"97","unescapedUrl":"https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-ash4/227759_1891641245689_1081243032_32171178_5667444_n.jpg","url":"https://fbcdn-sphotos-a.akamaihd.net/hphotos-ak-ash4/227759_1891641245689_1081243032_32171178_5667444_n.jpg","visibleUrl":"www.tohokingdom.com","title":"Toho
+      Kingdom • View topic - \u003cb\u003eDarth\u003c/b\u003e Maul vs \u003cb\u003eDarth\u003c/b\u003e
+      Vader","titleNoFormatting":"Toho Kingdom • View topic - Darth Maul vs Darth
+      Vader","originalContextUrl":"http://www.tohokingdom.com/forum/viewtopic.php?f\u003d17\u0026t\u003d8471\u0026sid\u003dd5f48dcd1bc9de94d5eb7993a2887a3d","content":"kikomia
+      wrote: Because: Wataru\u003d \u003cb\u003eWat\u003c/b\u003e/ar/u\u003d \u003cb\u003eWhat\u003c/b\u003e
+      are you.","contentNoFormatting":"kikomia wrote: Because: Wataru\u003d Wat/ar/u\u003d
+      What are you.","tbUrl":"http://t0.gstatic.com/images?q\u003dtbn:ANd9GcQKC0bxIyESu93cTRSWxWuoZYpmJnCwisNtTw1hZXy-0r7RBlkeccuhk6SE"},{"GsearchResultClass":"GimageSearch","width":"500","height":"636","imageId":"ANd9GcSrV9r9Zhc3SFtGfJwK2BcGZhnbduVqEyTDH2NvCgUjmr_n0NUlC8m7hZNF","tbWidth":"108","tbHeight":"137","unescapedUrl":"http://blog.starwreck.com/wp-content/uploads/2010/04/500x_darth-vader-evil-hamsters-gizmodo.jpg","url":"http://blog.starwreck.com/wp-content/uploads/2010/04/500x_darth-vader-evil-hamsters-gizmodo.jpg","visibleUrl":"blog.starwreck.com","title":"Iron
+      Sky, Digg, \u003cb\u003eDarth\u003c/b\u003e Vader and Evil Hamsters. « Beyond
+      the Iron Sky","titleNoFormatting":"Iron Sky, Digg, Darth Vader and Evil Hamsters.
+      « Beyond the Iron Sky","originalContextUrl":"http://blog.starwreck.com/2010/04/14/iron-sky-digg-darth-vader-and-evil-hamsters/","content":"\u003cb\u003eWhat\u003c/b\u003e
+      if \u003cb\u003eDarth\u003c/b\u003e Vader was a","contentNoFormatting":"What
+      if Darth Vader was a","tbUrl":"http://t3.gstatic.com/images?q\u003dtbn:ANd9GcSrV9r9Zhc3SFtGfJwK2BcGZhnbduVqEyTDH2NvCgUjmr_n0NUlC8m7hZNF"},{"GsearchResultClass":"GimageSearch","width":"576","height":"432","imageId":"ANd9GcT-M50_zEQcvyMdSsUCzQdxLNZExLifjdmou0NTaOBAGK2vfEhiB5j0UHs","tbWidth":"134","tbHeight":"101","unescapedUrl":"http://theworstguy.com/wp-content/uploads/2011/01/darth-and-vader.jpg","url":"http://theworstguy.com/wp-content/uploads/2011/01/darth-and-vader.jpg","visibleUrl":"theworstguy.com","title":"The
+      Worst Guy | Tag Archive | \u003cb\u003eDarth\u003c/b\u003e \u0026amp; Vader","titleNoFormatting":"The
+      Worst Guy | Tag Archive | Darth \u0026amp; Vader","originalContextUrl":"http://theworstguy.com/tag/darth-vader/","content":"\u003cb\u003eDarth\u003c/b\u003e
+      \u0026amp; Vader – Behind Blue","contentNoFormatting":"Darth \u0026amp; Vader
+      – Behind Blue","tbUrl":"http://t1.gstatic.com/images?q\u003dtbn:ANd9GcT-M50_zEQcvyMdSsUCzQdxLNZExLifjdmou0NTaOBAGK2vfEhiB5j0UHs"}],"cursor":{"resultCount":"163,000","pages":[{"start":"0","label":1},{"start":"4","label":2},{"start":"8","label":3},{"start":"12","label":4},{"start":"16","label":5},{"start":"20","label":6},{"start":"24","label":7},{"start":"28","label":8}],"estimatedResultCount":"163000","currentPageIndex":0,"moreResultsUrl":"http://www.google.com/images?oe\u003dutf8\u0026ie\u003dutf8\u0026source\u003duds\u0026start\u003d0\u0026hl\u003den\u0026q\u003ddarth+wat","searchResultTime":"0.25"}},
+      "responseDetails": null, "responseStatus": 200}'
+    http_version: '1.1'

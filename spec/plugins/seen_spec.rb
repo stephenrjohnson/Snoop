@@ -11,7 +11,7 @@ describe Seen do
 		@mockmessage.stub(:channel).and_return("#testchannel")
 		@mockmessage.stub(:message).and_return("test message")
 		@seenplugin = Seen.new(args)
-		@seenplugin.listen(@mockmessage)
+		@seenplugin.log(@mockmessage)
 	end
 
     it "Should respond thats you if your asking about yourself" do

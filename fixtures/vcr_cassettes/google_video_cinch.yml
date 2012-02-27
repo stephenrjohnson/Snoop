@@ -1,0 +1,54 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://ajax.googleapis.com:80/ajax/services/search/video?q=Gary%20Bernhardt%20javascript%20wat&v=1.0
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      cache-control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      pragma:
+      - no-cache
+      expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      date:
+      - Mon, 27 Feb 2012 13:45:58 GMT
+      content-type:
+      - text/javascript; charset=utf-8
+      x-embedded-status:
+      - '200'
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      x-xss-protection:
+      - 1; mode=block
+      server:
+      - GSE
+      transfer-encoding:
+      - chunked
+    body: ! '{"responseData": {"results":[{"GsearchResultClass":"GvideoSearch","title":"Shaky
+      cam footage of PhRUG watching WAT","titleNoFormatting":"Shaky cam footage of
+      PhRUG watching WAT","published":"Thu, 19 Jan 2012 11:53:02 PST","content":"Shaky
+      cam footage of PhRUG watching Gary Bernhardt\u0026#39;s WAT (www.destroyallsoftware.com
+      Philippine Ruby Users Group January 2012 Meetup AELogica ...","publisher":"www.youtube.com","tbUrl":"http://1.gvt0.com/vi/IeYVoA6K8SE/default.jpg","tbWidth":"320","tbHeight":"240","videoType":"YouTube","url":"http://www.google.com/url?q\u003dhttp://www.youtube.com/watch%3Fv%3DIeYVoA6K8SE\u0026source\u003dvideo\u0026vgc\u003drss\u0026usg\u003dAFQjCNGHhYyg3Rh6uMuR4qiPKPV325NTwg","playUrl":"http://www.youtube.com/v/IeYVoA6K8SE\u0026fs\u003d1\u0026source\u003duds\u0026autoplay\u003d1","rating":"5","duration":"234"},{"GsearchResultClass":"GvideoSearch","title":"Gary
+      McFarland ~ Trying To Find A Way (Aries)","titleNoFormatting":"Gary McFarland
+      ~ Trying To Find A Way (Aries)","published":"Wed, 26 Oct 2011 17:47:29 PDT","content":"From
+      the album \u0026#39;Scorpio And Other Signs\u0026#39; Side 1 track 4 Recorded
+      in New York City, 9 January 1968 Gary McFarland (vib, vcl, arr, comp ...","publisher":"www.youtube.com","tbUrl":"http://3.gvt0.com/vi/g_XTRheOYU8/default.jpg","tbWidth":"320","tbHeight":"240","videoType":"YouTube","url":"http://www.google.com/url?q\u003dhttp://www.youtube.com/watch%3Fv%3Dg_XTRheOYU8\u0026source\u003dvideo\u0026vgc\u003drss\u0026usg\u003dAFQjCNFQifgWPdsTwThZCWQ5-XYt6NvUbA","playUrl":"http://www.youtube.com/v/g_XTRheOYU8\u0026fs\u003d1\u0026source\u003duds\u0026autoplay\u003d1","rating":"-1","duration":"163"},{"GsearchResultClass":"GvideoSearch","title":"\"Cruel
+      War\" Elk Hollow (Gary Reeves \u0026 Jack Overly) and Kris Hazelton","titleNoFormatting":"\"Cruel
+      War\" Elk Hollow (Gary Reeves \u0026 Jack Overly) and Kris Hazelton","published":"Sun,
+      12 Sep 2010 17:43:33 PDT","content":"This one\u0026#39;s for you Dad Hazelton-we
+      were singing at Estes Park Heritage Festival.","publisher":"www.youtube.com","tbUrl":"http://2.gvt0.com/vi/dFaoEE9VRyo/default.jpg","tbWidth":"320","tbHeight":"240","videoType":"YouTube","url":"http://www.google.com/url?q\u003dhttp://www.youtube.com/watch%3Fv%3DdFaoEE9VRyo\u0026source\u003dvideo\u0026vgc\u003drss\u0026usg\u003dAFQjCNHQ_H4XSQ7DI4zL5y0_l1_dVE7z0g","playUrl":"http://www.youtube.com/v/dFaoEE9VRyo\u0026fs\u003d1\u0026source\u003duds\u0026autoplay\u003d1","rating":"5","duration":"185"},{"GsearchResultClass":"GvideoSearch","title":"Floyd
+      VanLaningham \"That''s What I''m Talkin'' ''Bout Baby\"","titleNoFormatting":"Floyd
+      VanLaningham \"That''s What I''m Talkin'' ''Bout Baby\"","published":"Mon, 19
+      Sep 2011 04:02:36 PDT","content":"Iwakuni Music Festival - 2009. Floyd VanLaningham
+      (vocals/guitar), Gary Bernhard (drums), Scott Davis (lead guitar/vocals)), Leo
+      Gamboa (bass ...","publisher":"www.youtube.com","tbUrl":"http://2.gvt0.com/vi/PW9OyCak0Ho/default.jpg","tbWidth":"320","tbHeight":"240","videoType":"YouTube","url":"http://www.google.com/url?q\u003dhttp://www.youtube.com/watch%3Fv%3DPW9OyCak0Ho\u0026source\u003dvideo\u0026vgc\u003drss\u0026usg\u003dAFQjCNFTkNjFc2WzU6mSDxzcQLQiq5uqpw","playUrl":"http://www.youtube.com/v/PW9OyCak0Ho\u0026fs\u003d1\u0026source\u003duds\u0026autoplay\u003d1","rating":"5","duration":"290"}],"cursor":{"pages":[{"start":"0","label":1},{"start":"4","label":2},{"start":"8","label":3}],"estimatedResultCount":"11","currentPageIndex":0,"moreResultsUrl":"http://video.google.com/videosearch?source\u003duds\u0026type\u003dsearch\u0026q\u003dGary+Bernhardt+javascript+wat+(site:video.google.com+OR+site:youtube.com+)\u0026hl\u003den\u0026start\u003d0"}},
+      "responseDetails": null, "responseStatus": 200}'
+    http_version: '1.1'
