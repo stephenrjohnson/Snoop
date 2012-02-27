@@ -9,7 +9,7 @@ gem 'webrick'
 gem 'nokogiri'
 gem 'time-ago-in-words'
 gem 'nagiosharder'
-
+gem 'nokogiri'
 group :test do
   gem "rspec"
   gem "vcr"
