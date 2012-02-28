@@ -4,7 +4,8 @@ require 'cinch'
 require 'vcr'
 
 require_relative '../lib/cinchplugin'
-
+require_relative '../lib/settings'
+Settings.path("./config/test.yml")
 RSpec.configure do |config|
 end
 

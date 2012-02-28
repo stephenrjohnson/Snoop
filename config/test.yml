@@ -1,0 +1,8 @@
+nagios:
+    servers:
+        test:
+            url: 'https://nagiosurl:443/nagios/cgi-bin/'
+            timeformat: '%d-%m-%Y %H:%M:%S'
+            username: NAGIOS_USERNAME
+            password: NAGIOS_PASSWORD    
+            description: TEST HOLDER

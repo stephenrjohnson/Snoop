@@ -3,33 +3,36 @@ require 'nagiosharder'
 
 class Nagios < CinchPlugin
   include Cinch::Plugin
-  match /nagios$/i,  method: :list
-  match /nagios (.+)/,  method: :alerts
-  set :help, "!nagios - List servers\n!nagios <server> - List problems on that instances"
+  match /nagios$/,  method: :list
+  set :help, "!nagios - List problems on all instances"
   
-
-  def list(m)
-    m.reply("Nagios instances")
-    
-    Settings.nagios.servers.each do |key, instance|
-      m.reply("    Server #{key} : #{instance['description']}")
+  def list (m)
+    alerts.each do |item|
+      m.reply(item)
     end
   end
 
-  def alerts(m, query)
-    if Settings.nagios.servers.key?(query)
+  def alerts
+    items = Array.new
+    if Settings.nagios.servers
       begin
-         problems(query).each do |problem|
-          m.reply("#{problem['host']}: #{problem['duration']} #{problem['service']} #{problem['status']} \n url #{problem['service_extinfo_url']}")
-         end
-      rescue
+        Settings.nagios.servers.each do |site, server|
+          items << "Server : #{site} \n"
+          query(site,:all_problems).each do |problem|
+          items << "#{problem['host']}: #{problem['duration']}  
+                    #{problem['service']} #{problem['status']} 
+                    url #{problem['service_extinfo_url']}"
+          end
+        end
+        return items
+      rescue => e
+        puts e
+        return false
       end
-    else
-     m.reply("Invalid server #{query}")
-   end
+    end
   end
 
-  def problems(site)
+  def query(site, query)
     url = 
     Settings.nagios.servers.send(site).url
     username = Settings.nagios.servers.send(site).username
@@ -37,6 +40,6 @@ class Nagios < CinchPlugin
     timeformat = Settings.nagios.servers.send(site).timeformat
     site = NagiosHarder::Site.new(url,username,password)
     site.nagios_time_format = timeformat
-    return site.service_status(:all_problems)
+    return site.service_status(query)
   end
 end
