@@ -1,7 +1,6 @@
 require_relative 'cinchplugin.rb'
 require_relative 'cinchthread.rb'
 require_relative 'settings.rb'
-require 'yaml'
 
 module Snoop
   class Bot

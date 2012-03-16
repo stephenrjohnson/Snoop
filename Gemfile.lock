@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/cinchrb/cinch.git
-  revision: aec4522aa3b02cb13a57fa920aa4b2af2fe3f4a0
-  branch: v2.0.0
+  revision: 6d25d9fee7107331fa98e94efa60faacd7934bb2
+  tag: v2.0.0-pre.6
   specs:
-    cinch (2.0.0)
+    cinch (2.0.0.pre.6)
 
 GEM
   remote: http://rubygems.org/

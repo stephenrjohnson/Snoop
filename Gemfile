@@ -1,7 +1,7 @@
 source :rubygems
 source "http://rubygems.org"
 
-gem 'cinch', :git => "https://github.com/cinchrb/cinch.git", :branch => "v2.0.0"
+gem 'cinch', :git => "https://github.com/cinchrb/cinch.git", :tag => "v2.0.0-pre.6"
 gem 'settingslogic'
 gem 'simple-rss'
 gem 'rack'
