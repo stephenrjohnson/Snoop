@@ -13,7 +13,12 @@ class UrbanDictionary < CinchPlugin
 
   def search(query)
       url = URI.encode "http://www.urbandictionary.com/define.php?term=#{query}"
-      "Urban Dictionary: #{Nokogiri.HTML(open url).at_css('.definition').text.strip}"
+      response = Nokogiri.HTML(open url).at_css('.definition')
+      if response
+        "Urban Dictionary: #{response.text.strip}"
+      else
+        "Urban Dictionary: Not Found Beatch"
+      end
     rescue => e
       e.message
   end
