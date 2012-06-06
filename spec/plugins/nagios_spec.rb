@@ -5,7 +5,7 @@ describe Nagios do
     describe "Nagios plugin" do
 
     before(:all) do 
-      VCR.config do |c|
+      VCR.configure do |c|
         c.filter_sensitive_data("<NAGIOS_USERNAME>") {"NAGIOS_USERNAME"}
         c.filter_sensitive_data("<NAGIOS_PASSWORD>") {"NAGIOS_PASSWORD"}
         c.filter_sensitive_data("<NAGIOSURL>") {"NAGIOSURL"}

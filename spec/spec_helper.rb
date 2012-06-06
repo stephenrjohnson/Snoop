@@ -9,9 +9,9 @@ Settings.path("./config/test.yml")
 RSpec.configure do |config|
 end
 
-VCR.config do |c|
+VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
-   c.stub_with :webmock # or :fakeweb
+  c.hook_into :webmock # or :fakeweb
 end
 
 

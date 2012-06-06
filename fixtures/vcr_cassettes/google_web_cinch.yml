@@ -1,54 +1,139 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://ajax.googleapis.com:80/ajax/services/search/web?q=cinch%20ruby&v=1.0
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
-      code: 200
-      message: OK
+http_interactions:
+- request:
+    method: get
+    uri: http://ajax.googleapis.com/ajax/services/search/web?q=cinch%20ruby&v=1.0
+    body:
+      encoding: US-ASCII
+      string: ''
     headers:
-      cache-control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      pragma:
-      - no-cache
-      expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
-      date:
-      - Mon, 27 Feb 2012 13:45:58 GMT
-      content-type:
-      - text/javascript; charset=utf-8
-      x-embedded-status:
-      - '200'
-      x-content-type-options:
-      - nosniff
-      x-frame-options:
-      - SAMEORIGIN
-      x-xss-protection:
-      - 1; mode=block
-      server:
-      - GSE
-      transfer-encoding:
-      - chunked
-    body: ! '{"responseData": {"results":[{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://www.rubyinside.com/cinch-a-ruby-irc-bot-building-framework-3223.html","url":"http://www.rubyinside.com/cinch-a-ruby-irc-bot-building-framework-3223.html","visibleUrl":"www.rubyinside.com","cacheUrl":"http://www.google.com/search?q\u003dcache:k1DDvQc97OYJ:www.rubyinside.com","title":"\u003cb\u003eCinch\u003c/b\u003e:
-      A \u003cb\u003eRuby\u003c/b\u003e IRC Bot Building Framework","titleNoFormatting":"Cinch:
-      A Ruby IRC Bot Building Framework","content":"By Peter Cooper / April 27, 2010.
-      \u003cb\u003eCinch\u003c/b\u003e is a new \u003cb\u003eRuby\u003c/b\u003e \u0026quot;microframework\u0026quot;
-      for   creating IRC bots. Effectively, \u003cb\u003eCinch\u003c/b\u003e is a
-      library that both abstracts away all of the \u003cb\u003e...\u003c/b\u003e"},{"GsearchResultClass":"GwebSearch","unescapedUrl":"https://github.com/cinchrb/cinch","url":"https://github.com/cinchrb/cinch","visibleUrl":"github.com","cacheUrl":"http://www.google.com/search?q\u003dcache:6D8S2wk-7bEJ:github.com","title":"cinchrb/\u003cb\u003ecinch\u003c/b\u003e
-      - GitHub","titleNoFormatting":"cinchrb/cinch - GitHub","content":"\u003cb\u003eCinch\u003c/b\u003e
-      is an IRC Bot Building Framework for quickly creating IRC bots in \u003cb\u003eRuby\u003c/b\u003e   with
-      minimal effort. It provides a simple interface based on plugins and rules."},{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://rubygems.org/gems/cinch","url":"http://rubygems.org/gems/cinch","visibleUrl":"rubygems.org","cacheUrl":"http://www.google.com/search?q\u003dcache:11-jqGK76TsJ:rubygems.org","title":"\u003cb\u003ecinch\u003c/b\u003e
-      | RubyGems.org | your community gem host","titleNoFormatting":"cinch | RubyGems.org
-      | your community gem host","content":"\u003cb\u003ecinch\u003c/b\u003e. 1.1.3.
-      A simple, friendly DSL for creating IRC bots. installgem install \u003cb\u003ecinch\u003c/b\u003e.   Download
-      Subscribe Stats. Authors. Lee Jarvis, Dominik Honnef. 13719 total \u003cb\u003e...\u003c/b\u003e"},{"GsearchResultClass":"GwebSearch","unescapedUrl":"http://ruby.about.com/b/2010/05/10/irc-bots-are-a-cinch.htm","url":"http://ruby.about.com/b/2010/05/10/irc-bots-are-a-cinch.htm","visibleUrl":"ruby.about.com","cacheUrl":"http://www.google.com/search?q\u003dcache:0zCogl6FHMIJ:ruby.about.com","title":"IRC
-      Bots are a \u003cb\u003eCinch\u003c/b\u003e - \u003cb\u003eRuby\u003c/b\u003e
-      - About.com","titleNoFormatting":"IRC Bots are a Cinch - Ruby - About.com","content":"May
-      10, 2010 \u003cb\u003e...\u003c/b\u003e For many of you out there, IRC is a
-      major form of communication for you. And of   course, one of the great things
-      about IRC is that it\u0026#39;s an open \u003cb\u003e...\u003c/b\u003e"}],"cursor":{"resultCount":"27,000","pages":[{"start":"0","label":1},{"start":"4","label":2},{"start":"8","label":3},{"start":"12","label":4},{"start":"16","label":5},{"start":"20","label":6},{"start":"24","label":7},{"start":"28","label":8}],"estimatedResultCount":"27000","currentPageIndex":0,"moreResultsUrl":"http://www.google.com/search?oe\u003dutf8\u0026ie\u003dutf8\u0026source\u003duds\u0026start\u003d0\u0026hl\u003den\u0026q\u003dcinch+ruby","searchResultTime":"0.36"}},
-      "responseDetails": null, "responseStatus": 200}'
-    http_version: '1.1'
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        bm8tY2FjaGUsIG5vLXN0b3JlLCBtYXgtYWdlPTAsIG11c3QtcmV2YWxpZGF0
+        ZQ==
+      !binary "UHJhZ21h":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "RXhwaXJlcw==":
+      - !binary |-
+        RnJpLCAwMSBKYW4gMTk5MCAwMDowMDowMCBHTVQ=
+      !binary "RGF0ZQ==":
+      - !binary |-
+        V2VkLCAwNiBKdW4gMjAxMiAyMjoxMDo0NiBHTVQ=
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        dGV4dC9qYXZhc2NyaXB0OyBjaGFyc2V0PXV0Zi04
+      !binary "WC1FbWJlZGRlZC1TdGF0dXM=":
+      - !binary |-
+        MjAw
+      !binary "WC1Db250ZW50LVR5cGUtT3B0aW9ucw==":
+      - !binary |-
+        bm9zbmlmZg==
+      !binary "WC1GcmFtZS1PcHRpb25z":
+      - !binary |-
+        U0FNRU9SSUdJTg==
+      !binary "WC1Yc3MtUHJvdGVjdGlvbg==":
+      - !binary |-
+        MTsgbW9kZT1ibG9jaw==
+      !binary "U2VydmVy":
+      - !binary |-
+        R1NF
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZXNwb25zZURhdGEiOiB7InJlc3VsdHMiOlt7IkdzZWFyY2hSZXN1bHRD
+        bGFzcyI6Ikd3ZWJTZWFyY2giLCJ1bmVzY2FwZWRVcmwiOiJodHRwczovL2dp
+        dGh1Yi5jb20vY2luY2hyYi9jaW5jaCIsInVybCI6Imh0dHBzOi8vZ2l0aHVi
+        LmNvbS9jaW5jaHJiL2NpbmNoIiwidmlzaWJsZVVybCI6ImdpdGh1Yi5jb20i
+        LCJjYWNoZVVybCI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2g/cVx1
+        MDAzZGNhY2hlOjZEOFMyd2stN2JFSjpnaXRodWIuY29tIiwidGl0bGUiOiJj
+        aW5jaHJiL1x1MDAzY2JcdTAwM2VjaW5jaFx1MDAzYy9iXHUwMDNlIMK3IEdp
+        dEh1YiIsInRpdGxlTm9Gb3JtYXR0aW5nIjoiY2luY2hyYi9jaW5jaCDCtyBH
+        aXRIdWIiLCJjb250ZW50IjoiTWF5IDEyLCAyMDEyIFx1MDAzY2JcdTAwM2Uu
+        Li5cdTAwM2MvYlx1MDAzZSBcdTAwM2NiXHUwMDNlQ2luY2hcdTAwM2MvYlx1
+        MDAzZSBpcyBhbiBJUkMgQm90IEJ1aWxkaW5nIEZyYW1ld29yayBmb3IgcXVp
+        Y2tseSBjcmVhdGluZyBJUkMgYm90cyBpbiBcdTAwM2NiXHUwMDNlUnVieVx1
+        MDAzYy9iXHUwMDNlICAgd2l0aCBtaW5pbWFsIGVmZm9ydC4gSXQgcHJvdmlk
+        ZXMgYSBzaW1wbGUgaW50ZXJmYWNlIGJhc2VkIG9uIFx1MDAzY2JcdTAwM2Uu
+        Li5cdTAwM2MvYlx1MDAzZSJ9LHsiR3NlYXJjaFJlc3VsdENsYXNzIjoiR3dl
+        YlNlYXJjaCIsInVuZXNjYXBlZFVybCI6Imh0dHA6Ly93d3cucnVieWluc2lk
+        ZS5jb20vY2luY2gtYS1ydWJ5LWlyYy1ib3QtYnVpbGRpbmctZnJhbWV3b3Jr
+        LTMyMjMuaHRtbCIsInVybCI6Imh0dHA6Ly93d3cucnVieWluc2lkZS5jb20v
+        Y2luY2gtYS1ydWJ5LWlyYy1ib3QtYnVpbGRpbmctZnJhbWV3b3JrLTMyMjMu
+        aHRtbCIsInZpc2libGVVcmwiOiJ3d3cucnVieWluc2lkZS5jb20iLCJjYWNo
+        ZVVybCI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS9zZWFyY2g/cVx1MDAzZGNh
+        Y2hlOmsxRER2UWM5N09ZSjp3d3cucnVieWluc2lkZS5jb20iLCJ0aXRsZSI6
+        Ilx1MDAzY2JcdTAwM2VDaW5jaFx1MDAzYy9iXHUwMDNlOiBBIFx1MDAzY2Jc
+        dTAwM2VSdWJ5XHUwMDNjL2JcdTAwM2UgSVJDIEJvdCBCdWlsZGluZyBGcmFt
+        ZXdvcmsiLCJ0aXRsZU5vRm9ybWF0dGluZyI6IkNpbmNoOiBBIFJ1YnkgSVJD
+        IEJvdCBCdWlsZGluZyBGcmFtZXdvcmsiLCJjb250ZW50IjoiQnkgUGV0ZXIg
+        Q29vcGVyIC8gQXByaWwgMjcsIDIwMTAuIFx1MDAzY2JcdTAwM2VDaW5jaFx1
+        MDAzYy9iXHUwMDNlIGlzIGEgbmV3IFx1MDAzY2JcdTAwM2VSdWJ5XHUwMDNj
+        L2JcdTAwM2UgXHUwMDI2cXVvdDttaWNyb2ZyYW1ld29ya1x1MDAyNnF1b3Q7
+        IGZvciAgIGNyZWF0aW5nIElSQyBib3RzLiBFZmZlY3RpdmVseSwgXHUwMDNj
+        Ylx1MDAzZUNpbmNoXHUwMDNjL2JcdTAwM2UgaXMgYSBsaWJyYXJ5IHRoYXQg
+        Ym90aCBhYnN0cmFjdHMgYXdheSBhbGwgb2YgdGhlIFx1MDAzY2JcdTAwM2Uu
+        Li5cdTAwM2MvYlx1MDAzZSJ9LHsiR3NlYXJjaFJlc3VsdENsYXNzIjoiR3dl
+        YlNlYXJjaCIsInVuZXNjYXBlZFVybCI6Imh0dHA6Ly9ydWJ5ZG9jLmluZm8v
+        Z2l0aHViL2NpbmNocmIvY2luY2gvbWFzdGVyL0NpbmNoIiwidXJsIjoiaHR0
+        cDovL3J1Ynlkb2MuaW5mby9naXRodWIvY2luY2hyYi9jaW5jaC9tYXN0ZXIv
+        Q2luY2giLCJ2aXNpYmxlVXJsIjoicnVieWRvYy5pbmZvIiwiY2FjaGVVcmwi
+        OiJodHRwOi8vd3d3Lmdvb2dsZS5jb20vc2VhcmNoP3FcdTAwM2RjYWNoZTpF
+        ekVPT0gySnBQWUo6cnVieWRvYy5pbmZvIiwidGl0bGUiOiJNb2R1bGU6IFx1
+        MDAzY2JcdTAwM2VDaW5jaFx1MDAzYy9iXHUwMDNlIOKAlCBEb2N1bWVudGF0
+        aW9uIGZvciBjaW5jaHJiL1x1MDAzY2JcdTAwM2VjaW5jaFx1MDAzYy9iXHUw
+        MDNlIChtYXN0ZXIpIiwidGl0bGVOb0Zvcm1hdHRpbmciOiJNb2R1bGU6IENp
+        bmNoIOKAlCBEb2N1bWVudGF0aW9uIGZvciBjaW5jaHJiL2NpbmNoIChtYXN0
+        ZXIpIiwiY29udGVudCI6Ik1vZHVsZTogXHUwMDNjYlx1MDAzZUNpbmNoXHUw
+        MDNjL2JcdTAwM2UuIERlZmluZWQgaW46IGxpYi9cdTAwM2NiXHUwMDNlY2lu
+        Y2hcdTAwM2MvYlx1MDAzZS9wbHVnaW4ucmIsIGxpYi9cdTAwM2NiXHUwMDNl
+        Y2luY2hcdTAwM2MvYlx1MDAzZS9iYW4ucmIsIGxpYi9cdTAwM2NiXHUwMDNl
+        Y2luY2hcdTAwM2MvYlx1MDAzZS9kY2MucmIsIGxpYiAgL1x1MDAzY2JcdTAw
+        M2VjaW5jaFx1MDAzYy9iXHUwMDNlL2JvdC5yYiwgbGliL1x1MDAzY2JcdTAw
+        M2VjaW5jaFx1MDAzYy9iXHUwMDNlL2lyYy5yYiwgbGliL1x1MDAzY2JcdTAw
+        M2VjaW5jaFx1MDAzYy9iXHUwMDNlL3VzZXIucmIsIGxpYi9cdTAwM2NiXHUw
+        MDNlY2luY2hcdTAwM2MvYlx1MDAzZS9tYXNrLnJiLCBsaWIvXHUwMDNjYlx1
+        MDAzZWNpbmNoXHUwMDNjL2JcdTAwM2Uvc2FzbC5yYiwgXHUwMDNjYlx1MDAz
+        ZS4uLlx1MDAzYy9iXHUwMDNlIn0seyJHc2VhcmNoUmVzdWx0Q2xhc3MiOiJH
+        d2ViU2VhcmNoIiwidW5lc2NhcGVkVXJsIjoiaHR0cDovL3J1YnlnZW1zLm9y
+        Zy9nZW1zL2NpbmNoIiwidXJsIjoiaHR0cDovL3J1YnlnZW1zLm9yZy9nZW1z
+        L2NpbmNoIiwidmlzaWJsZVVybCI6InJ1YnlnZW1zLm9yZyIsImNhY2hlVXJs
+        IjoiaHR0cDovL3d3dy5nb29nbGUuY29tL3NlYXJjaD9xXHUwMDNkY2FjaGU6
+        MTEtanFHSzc2VHNKOnJ1YnlnZW1zLm9yZyIsInRpdGxlIjoiXHUwMDNjYlx1
+        MDAzZWNpbmNoXHUwMDNjL2JcdTAwM2UgfCBSdWJ5R2Vtcy5vcmcgfCB5b3Vy
+        IGNvbW11bml0eSBnZW0gaG9zdCIsInRpdGxlTm9Gb3JtYXR0aW5nIjoiY2lu
+        Y2ggfCBSdWJ5R2Vtcy5vcmcgfCB5b3VyIGNvbW11bml0eSBnZW0gaG9zdCIs
+        ImNvbnRlbnQiOiJcdTAwM2NiXHUwMDNlY2luY2hcdTAwM2MvYlx1MDAzZS4g
+        Mi4wLjIuIEEgc2ltcGxlLCBmcmllbmRseSBEU0wgZm9yIGNyZWF0aW5nIElS
+        QyBib3RzLiBpbnN0YWxsZ2VtIGluc3RhbGwgXHUwMDNjYlx1MDAzZWNpbmNo
+        XHUwMDNjL2JcdTAwM2UuICAgRG93bmxvYWQgU3Vic2NyaWJlIFN0YXRzLiBB
+        dXRob3JzLiBEb21pbmlrIEhvbm5lZi4gMTkzNzUgdG90YWwgZG93bmxvYWRz
+        IFx1MDAzY2JcdTAwM2UuLi5cdTAwM2MvYlx1MDAzZSJ9XSwiY3Vyc29yIjp7
+        InJlc3VsdENvdW50IjoiMjgsODAwIiwicGFnZXMiOlt7InN0YXJ0IjoiMCIs
+        ImxhYmVsIjoxfSx7InN0YXJ0IjoiNCIsImxhYmVsIjoyfSx7InN0YXJ0Ijoi
+        OCIsImxhYmVsIjozfSx7InN0YXJ0IjoiMTIiLCJsYWJlbCI6NH0seyJzdGFy
+        dCI6IjE2IiwibGFiZWwiOjV9LHsic3RhcnQiOiIyMCIsImxhYmVsIjo2fSx7
+        InN0YXJ0IjoiMjQiLCJsYWJlbCI6N30seyJzdGFydCI6IjI4IiwibGFiZWwi
+        Ojh9XSwiZXN0aW1hdGVkUmVzdWx0Q291bnQiOiIyODgwMCIsImN1cnJlbnRQ
+        YWdlSW5kZXgiOjAsIm1vcmVSZXN1bHRzVXJsIjoiaHR0cDovL3d3dy5nb29n
+        bGUuY29tL3NlYXJjaD9vZVx1MDAzZHV0ZjhcdTAwMjZpZVx1MDAzZHV0Zjhc
+        dTAwMjZzb3VyY2VcdTAwM2R1ZHNcdTAwMjZzdGFydFx1MDAzZDBcdTAwMjZo
+        bFx1MDAzZGVuXHUwMDI2cVx1MDAzZGNpbmNoK3J1YnkiLCJzZWFyY2hSZXN1
+        bHRUaW1lIjoiMC4xNCJ9fSwgInJlc3BvbnNlRGV0YWlscyI6IG51bGwsICJy
+        ZXNwb25zZVN0YXR1cyI6IDIwMH0=
+    http_version: 
+  recorded_at: Wed, 06 Jun 2012 22:10:46 GMT
+recorded_with: VCR 2.2.0
