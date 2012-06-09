@@ -10,6 +10,7 @@ gem 'nokogiri'
 gem 'time-ago-in-words'
 gem 'nagiosharder'
 gem 'nokogiri'
+gem 'escape'
 group :test do
   gem "rspec"
   gem "vcr"

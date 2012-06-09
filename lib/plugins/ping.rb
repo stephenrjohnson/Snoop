@@ -1,4 +1,5 @@
 require 'cinch'
+require 'escape'
 
 class Ping < CinchPlugin
   include Cinch::Plugin
@@ -6,7 +7,7 @@ class Ping < CinchPlugin
   set :help, "!ping <query> - Ping icmp host <query>"
 
   def ping_udp(m, query)
-    result = `ping -q -c 3 #{query}`
+    result = system  'ping -q -c 3 ' + Escape.shell_command(["#{query}"])
     if ($?.exitstatus == 0)
        m.reply("#{query} is up")
      else

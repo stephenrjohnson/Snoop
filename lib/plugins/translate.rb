@@ -34,7 +34,6 @@ class Translate < CinchPlugin
   end
 
   def lookup(csrc,cdst,phrase)
-    puts "http://translate.google.com/translate_a/t?client=t&hl=en&multires=1&sc=&sl=#{csrc}&ssel=0&tl=#{cdst}&tsel=0&uptl=en&text=#{phrase}"
     begin
       results = JSON.parse(open("http://translate.google.com/translate_a/t?client=t&hl=en&multires=1&sc=&sl=#{csrc}&ssel=0&tl=#{cdst}&tsel=0&uptl=en&text=#{phrase}").read)
     rescue
