@@ -1,6 +1,7 @@
 require 'cinch'
 require 'open-uri'
 require 'nokogiri'
+require 'cgi'
 
 class UrbanDictionary < CinchPlugin
   include Cinch::Plugin
@@ -12,7 +13,7 @@ class UrbanDictionary < CinchPlugin
   end
 
   def search(query)
-      url = URI.encode "http://www.urbandictionary.com/define.php?term=#{query}"
+      url = URI.encode "http://www.urbandictionary.com/define.php?term=#{CGI::escape(query)}"
       response = Nokogiri.HTML(open url).at_css('.definition')
       if response
         "Urban Dictionary: #{response.text.strip}"

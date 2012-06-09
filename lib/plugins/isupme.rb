@@ -1,5 +1,6 @@
 require 'cinch'
 require 'open-uri'
+require 'cgi'
 
 class IsUp < CinchPlugin
   include Cinch::Plugin 
@@ -8,7 +9,7 @@ class IsUp < CinchPlugin
   match /is (.*?) (up|down)(\?)?/, method: :runcheck
 
   def check(domain)
-    url = "http://www.isup.me/#{domain}"
+    url = "http://www.isup.me/#{CGI::escape(domain)}"
     responce = open(url).read
     if responce.match("It's just you.")
       return "Its up and working must be just you"
