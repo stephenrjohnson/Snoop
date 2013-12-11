@@ -1,16 +1,16 @@
 source :rubygems
 source "http://rubygems.org"
 
-gem 'cinch', :git => "https://github.com/cinchrb/cinch.git", :tag => "v2.0.2"
+gem 'cinch'
 gem 'settingslogic'
 gem 'simple-rss'
 gem 'rack'
 gem 'webrick'
 gem 'nokogiri'
-gem 'time-ago-in-words'
 gem 'nagiosharder'
 gem 'nokogiri'
 gem 'escape'
+gem 'time_ago_in_words'
 group :test do
   gem "rspec"
   gem "vcr"

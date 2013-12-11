@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative '../lib/bot.rb'
 require 'rubygems'
 require 'optparse'

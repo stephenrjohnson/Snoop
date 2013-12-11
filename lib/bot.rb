@@ -12,6 +12,10 @@ module Snoop
       end
 
       def config(options)
+        if options[:config_file] == nil
+          puts 'Please suply config file as option'
+          exit 1
+        end
         Settings.path(options[:config_file])
         plugins = getallplugins
         puts plugins.inspect
