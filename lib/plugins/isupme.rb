@@ -3,7 +3,7 @@ require 'open-uri'
 require 'cgi'
 
 class IsUp < CinchPlugin
-  include Cinch::Plugin 
+  include Cinch::Plugin
   set :help, "!is <site> up|down - Check with www.isup.me"
 
   match /is (.*?) (up|down)(\?)?/, method: :runcheck
