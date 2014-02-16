@@ -1,418 +1,208 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: https://<NAGIOS_USERNAME>:<NAGIOS_PASSWORD>@<NAGIOSURL>:443/nagios/cgi-bin/status.cgi?hoststatustype=15&servicegroup=all&servicestatustypes=28&style=detail
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+http_interactions:
+- request:
+    method: get
+    uri: https://NAGIOS_USERNAME:NAGIOS_PASSWORD@nagiosurl/nagios/cgi-bin/status.cgi?hoststatustype=15&servicegroup=all&servicestatustypes=28&style=detail
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 200
       message: OK
     headers:
-      date:
+      Date:
       - Mon, 27 Feb 2012 14:13:13 GMT
-      content-type:
+      Content-Type:
       - text/html
-      transfer-encoding:
+      Transfer-Encoding:
       - chunked
-      connection:
+      Connection:
       - keep-alive
-      keep-alive:
+      Keep-Alive:
       - timeout=5
-      vary:
+      Vary:
       - Accept-Encoding
       - Accept-Encoding
-      cache-control:
+      Cache-Control:
       - no-store
-      pragma:
+      Pragma:
       - no-cache
-      refresh:
+      Refresh:
       - '90'
-      expires:
+      Expires:
       - Thu, 01 Jan 1970 00:00:00 GMT
-      last-modified:
+      Last-Modified:
       - Mon, 27 Feb 2012 14:13:13 GMT
-      server:
+      Server:
       - Apache
-    body: ! '<html>
-
-      <head>
-
-      <link rel="shortcut icon" href="/nagios/images/favicon.ico" type="image/ico">
-
-      <title>
-
-      Current Network Status
-
-      </title>
-
-      <LINK REL=''stylesheet'' TYPE=''text/css'' HREF=''/nagios/stylesheets/common.css''><LINK
-      REL=''stylesheet'' TYPE=''text/css'' HREF=''/nagios/stylesheets/status.css''></head>
-
-      <body CLASS=''status''>
-
-
-      <!-- Produced by Nagios (http://www.nagios.org).  Copyright (c) 1999-2007 Ethan
-      Galstad. -->
-
-      <table border=0 width=100% cellspacing=0 cellpadding=0>
-
-      <tr>
-
-      <td align=left valign=top width=33%>
-
-      <TABLE CLASS=''infoBox'' BORDER=1 CELLSPACING=0 CELLPADDING=0>
-
-      <TR><TD CLASS=''infoBox''>
-
-      <DIV CLASS=''infoBoxTitle''>Current Network Status</DIV>
-
-      Last Updated: Mon Feb 27 14:13:13 GMT 2012<BR>
-
-      Updated every 90 seconds<br>
-
-      Nagios&reg; Core&trade; 3.3.1 - <A HREF=''http://www.nagios.org'' TARGET=''_new''
-      CLASS=''homepageURL''>www.nagios.org</A><BR>
-
-      Logged in as <i><NAGIOS_USERNAME</i><BR>
-
-      </TD></TR>
-
-      </TABLE>
-
-      <TABLE BORDER=1 CELLPADDING=0 CELLSPACING=0 CLASS=''linkBox''>
-
-      <TR><TD CLASS=''linkBox''>
-
-      <a href=''status.cgi?servicegroup=all&style=overview''>View Status Overview
-      For All Service Groups</a><br>
-
-      <a href=''status.cgi?servicegroup=all&style=summary''>View Status Summary For
-      All Service Groups</a><br>
-
-      <a href=''status.cgi?servicegroup=all&style=grid''>View Service Status Grid
-      For All Service Groups</a><br>
-
-      </TD></TR>
-
-      </TABLE>
-
-      </td>
-
-      <td align=center valign=top width=33%>
-
-      <DIV CLASS=''hostTotals''>Host Status Totals</DIV>
-
-      <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
-
-      <TR><TD>
-
-      <TABLE BORDER=1 CLASS=''hostTotals''>
-
-      <TR>
-
-      <TH CLASS=''hostTotals''><A CLASS=''hostTotals'' HREF=''status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=2''>Up</A></TH>
-
-      <TH CLASS=''hostTotals''><A CLASS=''hostTotals'' HREF=''status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=4''>Down</A></TH>
-
-      <TH CLASS=''hostTotals''><A CLASS=''hostTotals'' HREF=''status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=8''>Unreachable</A></TH>
-
-      <TH CLASS=''hostTotals''><A CLASS=''hostTotals'' HREF=''status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=1''>Pending</A></TH>
-
-      </TR>
-
-      <TR>
-
-      <TD CLASS=''hostTotalsUP''>79</TD>
-
-      <TD CLASS=''hostTotals''>0</TD>
-
-      <TD CLASS=''hostTotals''>0</TD>
-
-      <TD CLASS=''hostTotals''>0</TD>
-
-      </TR>
-
-      </TABLE>
-
-      </TD></TR><TR><TD ALIGN=CENTER>
-
-      <TABLE BORDER=1 CLASS=''hostTotals''>
-
-      <TR>
-
-      <TH CLASS=''hostTotals''><A CLASS=''hostTotals'' HREF=''status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=12''><I>All
-      Problems</I></A></TH>
-
-      <TH CLASS=''hostTotals''><A CLASS=''hostTotals'' HREF=''status.cgi?servicegroup=all&servicestatustypes=28''><I>All
-      Types</I></A></TH>
-
-      </TR><TR>
-
-      <TD CLASS=''hostTotals''>0</TD>
-
-      <TD CLASS=''hostTotals''>79</TD>
-
-      </TR>
-
-      </TABLE>
-
-      </TD></TR>
-
-      </TABLE>
-
-      </DIV>
-
-      </td>
-
-      <td align=center valign=top width=33%>
-
-      <DIV CLASS=''serviceTotals''>Service Status Totals</DIV>
-
-      <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
-
-      <TR><TD>
-
-      <TABLE BORDER=1 CLASS=''serviceTotals''>
-
-      <TR>
-
-      <TH CLASS=''serviceTotals''><A CLASS=''serviceTotals'' HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=2&hoststatustypes=15''>Ok</A></TH>
-
-      <TH CLASS=''serviceTotals''><A CLASS=''serviceTotals'' HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=4&hoststatustypes=15''>Warning</A></TH>
-
-      <TH CLASS=''serviceTotals''><A CLASS=''serviceTotals'' HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=8&hoststatustypes=15''>Unknown</A></TH>
-
-      <TH CLASS=''serviceTotals''><A CLASS=''serviceTotals'' HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=16&hoststatustypes=15''>Critical</A></TH>
-
-      <TH CLASS=''serviceTotals''><A CLASS=''serviceTotals'' HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=1&hoststatustypes=15''>Pending</A></TH>
-
-      </TR>
-
-      <TR>
-
-      <TD CLASS=''serviceTotalsOK''>350</TD>
-
-      <TD CLASS=''serviceTotals''>0</TD>
-
-      <TD CLASS=''serviceTotals''>0</TD>
-
-      <TD CLASS=''serviceTotalsCRITICAL''>1</TD>
-
-      <TD CLASS=''serviceTotals''>0</TD>
-
-      </TR>
-
-      </TABLE>
-
-      </TD></TR><TR><TD ALIGN=CENTER>
-
-      <TABLE BORDER=1 CLASS=''serviceTotals''>
-
-      <TR>
-
-      <TH CLASS=''serviceTotals''><A CLASS=''serviceTotals'' HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&hoststatustypes=15''><I>All
-      Problems</I></A></TH>
-
-      <TH CLASS=''serviceTotals''><A CLASS=''serviceTotals'' HREF=''status.cgi?servicegroup=all&style=detail&hoststatustypes=15''><I>All
-      Types</I></A></TH>
-
-      </TR><TR>
-
-      <TD CLASS=''serviceTotalsPROBLEMS''>1</TD>
-
-      <TD CLASS=''serviceTotals''>351</TD>
-
-      </TR>
-
-      </TABLE>
-
-      </TD></TR>
-
-      </TABLE>
-
-      </DIV>
-
-      </td>
-
-      <td align=right valign=bottom>
-
-      </td>
-
-      </tr>
-
-      </table>
-
-      <P>
-
-      <table border=0 width=100%>
-
-      <tr>
-
-      <td valign=top align=left width=33%>
-
-      <table border=1 class=''filter'' cellspacing=0 cellpadding=0>
-
-      <tr><td class=''filter''>
-
-      <table border=0 cellspacing=2 cellpadding=0>
-
-      <tr><td colspan=2 valign=top align=left CLASS=''filterTitle''>Display Filters:</td></tr><tr><td
-      valign=top align=left CLASS=''filterName''>Host Status Types:</td><td valign=top
-      align=left CLASS=''filterValue''>All</td></tr><tr><td valign=top align=left
-      CLASS=''filterName''>Host Properties:</td><td valign=top align=left CLASS=''filterValue''>Any</td></tr>
-
-      <tr><td valign=top align=left CLASS=''filterName''>Service Status Types:</td><td
-      valign=top align=left CLASS=''filterValue''>All Problems</td></tr><tr><td valign=top
-      align=left CLASS=''filterName''>Service Properties:</td><td valign=top align=left
-      CLASS=''filterValue''>Any</td></tr></table>
-
-      </td></tr></table>
-
-      </td><td valign=top align=center width=33%>
-
-      <DIV ALIGN=CENTER CLASS=''statusTitle''>Service Status Details For All Service
-      Groups</DIV>
-
-      <br></td>
-
-      <td valign=top align=right width=33%></td>
-
-      </tr>
-
-      </table>
-
-      <TABLE BORDER=0 width=100% CLASS=''status''>
-
-      <TR>
-
-      <TH CLASS=''status''>Host&nbsp;<A HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=1''><IMG
-      SRC=''/nagios/images/up.gif'' BORDER=0 ALT=''Sort by host name (ascending)''
-      TITLE=''Sort by host name (ascending)''></A><A HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=1''><IMG
-      SRC=''/nagios/images/down.gif'' BORDER=0 ALT=''Sort by host name (descending)''
-      TITLE=''Sort by host name (descending)''></A></TH><TH CLASS=''status''>Service&nbsp;<A
-      HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=2''><IMG
-      SRC=''/nagios/images/up.gif'' BORDER=0 ALT=''Sort by service name (ascending)''
-      TITLE=''Sort by service name (ascending)''></A><A HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=2''><IMG
-      SRC=''/nagios/images/down.gif'' BORDER=0 ALT=''Sort by service name (descending)''
-      TITLE=''Sort by service name (descending)''></A></TH><TH CLASS=''status''>Status&nbsp;<A
-      HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=3''><IMG
-      SRC=''/nagios/images/up.gif'' BORDER=0 ALT=''Sort by service status (ascending)''
-      TITLE=''Sort by service status (ascending)''></A><A HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=3''><IMG
-      SRC=''/nagios/images/down.gif'' BORDER=0 ALT=''Sort by service status (descending)''
-      TITLE=''Sort by service status (descending)''></A></TH><TH CLASS=''status''>Last
-      Check&nbsp;<A HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=4''><IMG
-      SRC=''/nagios/images/up.gif'' BORDER=0 ALT=''Sort by last check time (ascending)''
-      TITLE=''Sort by last check time (ascending)''></A><A HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=4''><IMG
-      SRC=''/nagios/images/down.gif'' BORDER=0 ALT=''Sort by last check time (descending)''
-      TITLE=''Sort by last check time (descending)''></A></TH><TH CLASS=''status''>Duration&nbsp;<A
-      HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=6''><IMG
-      SRC=''/nagios/images/up.gif'' BORDER=0 ALT=''Sort by state duration (ascending)''
-      TITLE=''Sort by state duration (ascending)''></A><A HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=6''><IMG
-      SRC=''/nagios/images/down.gif'' BORDER=0 ALT=''Sort by state duration time (descending)''
-      TITLE=''Sort by state duration time (descending)''></A></TH><TH CLASS=''status''>Attempt&nbsp;<A
-      HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=5''><IMG
-      SRC=''/nagios/images/up.gif'' BORDER=0 ALT=''Sort by current attempt (ascending)''
-      TITLE=''Sort by current attempt (ascending)''></A><A HREF=''status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=5''><IMG
-      SRC=''/nagios/images/down.gif'' BORDER=0 ALT=''Sort by current attempt (descending)''
-      TITLE=''Sort by current attempt (descending)''></A></TH><TH CLASS=''status''>Status
-      Information</TH>
-
-      </TR>
-
-      <TR>
-
-      <TD CLASS=''statusEven''><TABLE BORDER=0 WIDTH=''100%'' cellpadding=0 cellspacing=0>
-
-      <TR>
-
-      <TD ALIGN=LEFT>
-
-      <TABLE BORDER=0 cellpadding=0 cellspacing=0>
-
-      <TR>
-
-      <TD align=left valign=center CLASS=''statusEven''><A HREF=''extinfo.cgi?type=1&host=host''
-      title=''192.168.1.12''>host</A></TD>
-
-      </TR>
-
-      </TABLE>
-
-      </TD>
-
-      <TD align=right valign=center>
-
-      <TABLE BORDER=0 cellpadding=0 cellspacing=0>
-
-      <TR>
-
-      </TR>
-
-      </TABLE>
-
-      </TD>
-
-      </TR>
-
-      </TABLE>
-
-      </TD>
-
-      <TD CLASS=''statusBGCRITICALACK''><TABLE BORDER=0 WIDTH=''100%'' CELLSPACING=0
-      CELLPADDING=0><TR><TD ALIGN=LEFT><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
-
-      <TR>
-
-      <TD ALIGN=LEFT valign=center CLASS=''statusBGCRITICALACK''><A HREF=''extinfo.cgi?type=2&host=host&service=HTTP''>HTTP</A></TD></TR>
-
-      </TABLE>
-
-      </TD>
-
-      <TD ALIGN=RIGHT CLASS=''statusBGCRITICALACK''>
-
-      <TABLE BORDER=0 cellspacing=0 cellpadding=0>
-
-      <TR>
-
-      <TD ALIGN=center valign=center><A HREF=''extinfo.cgi?type=2&host=host&service=HTTP#comments''><IMG
-      SRC=''/nagios/images/comment.gif'' BORDER=0 WIDTH=20 HEIGHT=20 ALT=''This service
-      has 1 comment associated with it'' TITLE=''This service has 1 comment associated
-      with it''></A></TD><TD ALIGN=center valign=center><A HREF=''extinfo.cgi?type=2&host=&service=HTTP#comments''><IMG
-      SRC=''/nagios/images/ack.gif'' BORDER=0 WIDTH=20 HEIGHT=20 ALT=''This service
-      problem has been acknowledged'' TITLE=''This service problem has been acknowledged''></A></TD></TR>
-
-      </TABLE>
-
-      </TD>
-
-      </TR></TABLE></TD>
-
-      <TD CLASS=''statusCRITICAL''>CRITICAL</TD>
-
-      <TD CLASS=''statusBGCRITICALACK'' nowrap>27-02-2012 14:11:16</TD>
-
-      <TD CLASS=''statusBGCRITICALACK'' nowrap> 5d 22h 21m 16s</TD>
-
-      <TD CLASS=''statusBGCRITICALACK''>3/3</TD>
-
-      <TD CLASS=''statusBGCRITICALACK'' valign=''center''>Connection refused&nbsp;</TD>
-
-      </TR>
-
-      </TABLE>
-
-      <BR><DIV CLASS=''itemTotalsTitle''>1 Matching Service Entries Displayed</DIV>
-
-
-      <!-- Produced by Nagios (http://www.nagios.org).  Copyright (c) 1999-2007 Ethan
-      Galstad. -->
-
-      </body>
-
-      </html>
-
-'
+    body:
+      encoding: UTF-8
+      string: |
+        <html>
+        <head>
+        <link rel="shortcut icon" href="/nagios/images/favicon.ico" type="image/ico">
+        <title>
+        Current Network Status
+        </title>
+        <LINK REL='stylesheet' TYPE='text/css' HREF='/nagios/stylesheets/common.css'><LINK REL='stylesheet' TYPE='text/css' HREF='/nagios/stylesheets/status.css'></head>
+        <body CLASS='status'>
+
+        <!-- Produced by Nagios (http://www.nagios.org).  Copyright (c) 1999-2007 Ethan Galstad. -->
+        <table border=0 width=100% cellspacing=0 cellpadding=0>
+        <tr>
+        <td align=left valign=top width=33%>
+        <TABLE CLASS='infoBox' BORDER=1 CELLSPACING=0 CELLPADDING=0>
+        <TR><TD CLASS='infoBox'>
+        <DIV CLASS='infoBoxTitle'>Current Network Status</DIV>
+        Last Updated: Mon Feb 27 14:13:13 GMT 2012<BR>
+        Updated every 90 seconds<br>
+        Nagios&reg; Core&trade; 3.3.1 - <A HREF='http://www.nagios.org' TARGET='_new' CLASS='homepageURL'>www.nagios.org</A><BR>
+        Logged in as <i><NAGIOS_USERNAME</i><BR>
+        </TD></TR>
+        </TABLE>
+        <TABLE BORDER=1 CELLPADDING=0 CELLSPACING=0 CLASS='linkBox'>
+        <TR><TD CLASS='linkBox'>
+        <a href='status.cgi?servicegroup=all&style=overview'>View Status Overview For All Service Groups</a><br>
+        <a href='status.cgi?servicegroup=all&style=summary'>View Status Summary For All Service Groups</a><br>
+        <a href='status.cgi?servicegroup=all&style=grid'>View Service Status Grid For All Service Groups</a><br>
+        </TD></TR>
+        </TABLE>
+        </td>
+        <td align=center valign=top width=33%>
+        <DIV CLASS='hostTotals'>Host Status Totals</DIV>
+        <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+        <TR><TD>
+        <TABLE BORDER=1 CLASS='hostTotals'>
+        <TR>
+        <TH CLASS='hostTotals'><A CLASS='hostTotals' HREF='status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=2'>Up</A></TH>
+        <TH CLASS='hostTotals'><A CLASS='hostTotals' HREF='status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=4'>Down</A></TH>
+        <TH CLASS='hostTotals'><A CLASS='hostTotals' HREF='status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=8'>Unreachable</A></TH>
+        <TH CLASS='hostTotals'><A CLASS='hostTotals' HREF='status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=1'>Pending</A></TH>
+        </TR>
+        <TR>
+        <TD CLASS='hostTotalsUP'>79</TD>
+        <TD CLASS='hostTotals'>0</TD>
+        <TD CLASS='hostTotals'>0</TD>
+        <TD CLASS='hostTotals'>0</TD>
+        </TR>
+        </TABLE>
+        </TD></TR><TR><TD ALIGN=CENTER>
+        <TABLE BORDER=1 CLASS='hostTotals'>
+        <TR>
+        <TH CLASS='hostTotals'><A CLASS='hostTotals' HREF='status.cgi?servicegroup=all&servicestatustypes=28&hoststatustypes=12'><I>All Problems</I></A></TH>
+        <TH CLASS='hostTotals'><A CLASS='hostTotals' HREF='status.cgi?servicegroup=all&servicestatustypes=28'><I>All Types</I></A></TH>
+        </TR><TR>
+        <TD CLASS='hostTotals'>0</TD>
+        <TD CLASS='hostTotals'>79</TD>
+        </TR>
+        </TABLE>
+        </TD></TR>
+        </TABLE>
+        </DIV>
+        </td>
+        <td align=center valign=top width=33%>
+        <DIV CLASS='serviceTotals'>Service Status Totals</DIV>
+        <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+        <TR><TD>
+        <TABLE BORDER=1 CLASS='serviceTotals'>
+        <TR>
+        <TH CLASS='serviceTotals'><A CLASS='serviceTotals' HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=2&hoststatustypes=15'>Ok</A></TH>
+        <TH CLASS='serviceTotals'><A CLASS='serviceTotals' HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=4&hoststatustypes=15'>Warning</A></TH>
+        <TH CLASS='serviceTotals'><A CLASS='serviceTotals' HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=8&hoststatustypes=15'>Unknown</A></TH>
+        <TH CLASS='serviceTotals'><A CLASS='serviceTotals' HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=16&hoststatustypes=15'>Critical</A></TH>
+        <TH CLASS='serviceTotals'><A CLASS='serviceTotals' HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=1&hoststatustypes=15'>Pending</A></TH>
+        </TR>
+        <TR>
+        <TD CLASS='serviceTotalsOK'>350</TD>
+        <TD CLASS='serviceTotals'>0</TD>
+        <TD CLASS='serviceTotals'>0</TD>
+        <TD CLASS='serviceTotalsCRITICAL'>1</TD>
+        <TD CLASS='serviceTotals'>0</TD>
+        </TR>
+        </TABLE>
+        </TD></TR><TR><TD ALIGN=CENTER>
+        <TABLE BORDER=1 CLASS='serviceTotals'>
+        <TR>
+        <TH CLASS='serviceTotals'><A CLASS='serviceTotals' HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&hoststatustypes=15'><I>All Problems</I></A></TH>
+        <TH CLASS='serviceTotals'><A CLASS='serviceTotals' HREF='status.cgi?servicegroup=all&style=detail&hoststatustypes=15'><I>All Types</I></A></TH>
+        </TR><TR>
+        <TD CLASS='serviceTotalsPROBLEMS'>1</TD>
+        <TD CLASS='serviceTotals'>351</TD>
+        </TR>
+        </TABLE>
+        </TD></TR>
+        </TABLE>
+        </DIV>
+        </td>
+        <td align=right valign=bottom>
+        </td>
+        </tr>
+        </table>
+        <P>
+        <table border=0 width=100%>
+        <tr>
+        <td valign=top align=left width=33%>
+        <table border=1 class='filter' cellspacing=0 cellpadding=0>
+        <tr><td class='filter'>
+        <table border=0 cellspacing=2 cellpadding=0>
+        <tr><td colspan=2 valign=top align=left CLASS='filterTitle'>Display Filters:</td></tr><tr><td valign=top align=left CLASS='filterName'>Host Status Types:</td><td valign=top align=left CLASS='filterValue'>All</td></tr><tr><td valign=top align=left CLASS='filterName'>Host Properties:</td><td valign=top align=left CLASS='filterValue'>Any</td></tr>
+        <tr><td valign=top align=left CLASS='filterName'>Service Status Types:</td><td valign=top align=left CLASS='filterValue'>All Problems</td></tr><tr><td valign=top align=left CLASS='filterName'>Service Properties:</td><td valign=top align=left CLASS='filterValue'>Any</td></tr></table>
+        </td></tr></table>
+        </td><td valign=top align=center width=33%>
+        <DIV ALIGN=CENTER CLASS='statusTitle'>Service Status Details For All Service Groups</DIV>
+        <br></td>
+        <td valign=top align=right width=33%></td>
+        </tr>
+        </table>
+        <TABLE BORDER=0 width=100% CLASS='status'>
+        <TR>
+        <TH CLASS='status'>Host&nbsp;<A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=1'><IMG SRC='/nagios/images/up.gif' BORDER=0 ALT='Sort by host name (ascending)' TITLE='Sort by host name (ascending)'></A><A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=1'><IMG SRC='/nagios/images/down.gif' BORDER=0 ALT='Sort by host name (descending)' TITLE='Sort by host name (descending)'></A></TH><TH CLASS='status'>Service&nbsp;<A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=2'><IMG SRC='/nagios/images/up.gif' BORDER=0 ALT='Sort by service name (ascending)' TITLE='Sort by service name (ascending)'></A><A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=2'><IMG SRC='/nagios/images/down.gif' BORDER=0 ALT='Sort by service name (descending)' TITLE='Sort by service name (descending)'></A></TH><TH CLASS='status'>Status&nbsp;<A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=3'><IMG SRC='/nagios/images/up.gif' BORDER=0 ALT='Sort by service status (ascending)' TITLE='Sort by service status (ascending)'></A><A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=3'><IMG SRC='/nagios/images/down.gif' BORDER=0 ALT='Sort by service status (descending)' TITLE='Sort by service status (descending)'></A></TH><TH CLASS='status'>Last Check&nbsp;<A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=4'><IMG SRC='/nagios/images/up.gif' BORDER=0 ALT='Sort by last check time (ascending)' TITLE='Sort by last check time (ascending)'></A><A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=4'><IMG SRC='/nagios/images/down.gif' BORDER=0 ALT='Sort by last check time (descending)' TITLE='Sort by last check time (descending)'></A></TH><TH CLASS='status'>Duration&nbsp;<A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=6'><IMG SRC='/nagios/images/up.gif' BORDER=0 ALT='Sort by state duration (ascending)' TITLE='Sort by state duration (ascending)'></A><A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=6'><IMG SRC='/nagios/images/down.gif' BORDER=0 ALT='Sort by state duration time (descending)' TITLE='Sort by state duration time (descending)'></A></TH><TH CLASS='status'>Attempt&nbsp;<A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=1&sortoption=5'><IMG SRC='/nagios/images/up.gif' BORDER=0 ALT='Sort by current attempt (ascending)' TITLE='Sort by current attempt (ascending)'></A><A HREF='status.cgi?servicegroup=all&style=detail&servicestatustypes=28&sorttype=2&sortoption=5'><IMG SRC='/nagios/images/down.gif' BORDER=0 ALT='Sort by current attempt (descending)' TITLE='Sort by current attempt (descending)'></A></TH><TH CLASS='status'>Status Information</TH>
+        </TR>
+        <TR>
+        <TD CLASS='statusEven'><TABLE BORDER=0 WIDTH='100%' cellpadding=0 cellspacing=0>
+        <TR>
+        <TD ALIGN=LEFT>
+        <TABLE BORDER=0 cellpadding=0 cellspacing=0>
+        <TR>
+        <TD align=left valign=center CLASS='statusEven'><A HREF='extinfo.cgi?type=1&host=host' title='192.168.1.12'>host</A></TD>
+        </TR>
+        </TABLE>
+        </TD>
+        <TD align=right valign=center>
+        <TABLE BORDER=0 cellpadding=0 cellspacing=0>
+        <TR>
+        </TR>
+        </TABLE>
+        </TD>
+        </TR>
+        </TABLE>
+        </TD>
+        <TD CLASS='statusBGCRITICALACK'><TABLE BORDER=0 WIDTH='100%' CELLSPACING=0 CELLPADDING=0><TR><TD ALIGN=LEFT><TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+        <TR>
+        <TD ALIGN=LEFT valign=center CLASS='statusBGCRITICALACK'><A HREF='extinfo.cgi?type=2&host=host&service=HTTP'>HTTP</A></TD></TR>
+        </TABLE>
+        </TD>
+        <TD ALIGN=RIGHT CLASS='statusBGCRITICALACK'>
+        <TABLE BORDER=0 cellspacing=0 cellpadding=0>
+        <TR>
+        <TD ALIGN=center valign=center><A HREF='extinfo.cgi?type=2&host=host&service=HTTP#comments'><IMG SRC='/nagios/images/comment.gif' BORDER=0 WIDTH=20 HEIGHT=20 ALT='This service has 1 comment associated with it' TITLE='This service has 1 comment associated with it'></A></TD><TD ALIGN=center valign=center><A HREF='extinfo.cgi?type=2&host=&service=HTTP#comments'><IMG SRC='/nagios/images/ack.gif' BORDER=0 WIDTH=20 HEIGHT=20 ALT='This service problem has been acknowledged' TITLE='This service problem has been acknowledged'></A></TD></TR>
+        </TABLE>
+        </TD>
+        </TR></TABLE></TD>
+        <TD CLASS='statusCRITICAL'>CRITICAL</TD>
+        <TD CLASS='statusBGCRITICALACK' nowrap>27-02-2012 14:11:16</TD>
+        <TD CLASS='statusBGCRITICALACK' nowrap> 5d 22h 21m 16s</TD>
+        <TD CLASS='statusBGCRITICALACK'>3/3</TD>
+        <TD CLASS='statusBGCRITICALACK' valign='center'>Connection refused&nbsp;</TD>
+        </TR>
+        </TABLE>
+        <BR><DIV CLASS='itemTotalsTitle'>1 Matching Service Entries Displayed</DIV>
+
+        <!-- Produced by Nagios (http://www.nagios.org).  Copyright (c) 1999-2007 Ethan Galstad. -->
+        </body>
+        </html>
     http_version: '1.1'
+  recorded_at: Wed, 11 Dec 2013 13:05:27 GMT
+recorded_with: VCR 2.8.0

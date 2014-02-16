@@ -5,7 +5,7 @@ describe Google do
     describe "Goolge plugin" do
 
     before(:each) do 
-        @m = mock.as_null_object
+        @m = double.as_null_object
         @googleplugin = Google.new(@m)
     end
 

@@ -5,9 +5,9 @@ describe Seen do
 	describe "Seen plugin" do
 
 	before(:each) do 
-		args = mock.as_null_object
-		@mockmessage =  mock "Cinch::Message"
-		@mockmessage.stub(:user).and_return(mock("Cinch::Nick", :nick => "testuser"))
+		args = double.as_null_object
+		@mockmessage =  double "Cinch::Message"
+		@mockmessage.stub(:user).and_return(double("Cinch::Nick", :nick => "testuser"))
 		@mockmessage.stub(:channel).and_return("#testchannel")
 		@mockmessage.stub(:message).and_return("test message")
 		@seenplugin = Seen.new(args)
@@ -23,8 +23,8 @@ describe Seen do
     end
 
     it "Should give a valid output if you asking about someone it has seen" do
-		mockmessage =  mock "Cinch::Message"
-		mockmessage.stub(:user).and_return(mock("Cinch::Nick", :nick => "testuser1"))
+		mockmessage =  double "Cinch::Message"
+		mockmessage.stub(:user).and_return(double("Cinch::Nick", :nick => "testuser1"))
 		mockmessage.stub(:channel).and_return("#testchannel")
 		mockmessage.stub(:message).and_return("test message")
 		@seenplugin.message(mockmessage,"testuser").should include("was seen in")

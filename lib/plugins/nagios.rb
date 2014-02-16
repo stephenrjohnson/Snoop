@@ -5,7 +5,7 @@ class Nagios < CinchPlugin
   include Cinch::Plugin
   match /nagios$/,  method: :list
   set :help, "!nagios - List problems on all instances"
-  
+
   def list (m)
     alerts.each do |item|
       m.reply(item)
@@ -19,8 +19,8 @@ class Nagios < CinchPlugin
         Settings.nagios.servers.each do |site, server|
           items << "Server : #{site} \n"
           query(site,:all_problems).each do |problem|
-          items << "#{problem['host']}: #{problem['duration']}  
-                    #{problem['service']} #{problem['status']} 
+            items << "#{problem['host']}: #{problem['duration']}
+            #{problem['service']} #{problem['status']}
                     url #{problem['service_extinfo_url']}"
           end
         end
@@ -33,8 +33,7 @@ class Nagios < CinchPlugin
   end
 
   def query(site, query)
-    url = 
-    Settings.nagios.servers.send(site).url
+    url = Settings.nagios.servers.send(site).url
     username = Settings.nagios.servers.send(site).username
     password = Settings.nagios.servers.send(site).password
     timeformat = Settings.nagios.servers.send(site).timeformat

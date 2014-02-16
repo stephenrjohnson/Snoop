@@ -14,7 +14,7 @@ describe Nagios do
 
 
     before(:each) do 
-        @m = mock.as_null_object
+        @m = double.as_null_object
         @nagiosplugin = Nagios.new(@m)
     end
 
