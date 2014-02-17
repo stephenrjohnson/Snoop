@@ -1,6 +1,4 @@
-source :rubygems
-source "http://rubygems.org"
-
+source 'https://rubygems.org'
 gem 'cinch'
 gem 'settingslogic'
 gem 'simple-rss'
@@ -8,9 +6,9 @@ gem 'rack'
 gem 'webrick'
 gem 'nokogiri'
 gem 'nagiosharder'
-gem 'nokogiri'
 gem 'escape'
 gem 'time_ago_in_words'
+
 group :test do
   gem "rspec"
   gem "vcr"
