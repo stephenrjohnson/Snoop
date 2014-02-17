@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'cinch'
 gem 'settingslogic'
 gem 'simple-rss'
@@ -8,6 +9,7 @@ gem 'nokogiri'
 gem 'nagiosharder'
 gem 'escape'
 gem 'time_ago_in_words'
+gem "ruby-fogbugz"
 
 group :test do
   gem "rspec"
