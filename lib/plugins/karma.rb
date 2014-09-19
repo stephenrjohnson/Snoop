@@ -2,8 +2,8 @@ require 'cinch'
 
 class Karma < CinchPlugin
   include Cinch::Plugin
-  match /(\w*)[+]{2}/, method: :increment
-  match /(\w*)[-]{2}/, method: :decrement
+  match /(\w*)[+]{2}/, method: :increment, use_prefix: false
+  match /(\w*)[-]{2}/, method: :decrement, use_prefix: false
   match /karma[ ]?(\w*)?/, method: :show_scores
   set :help, "<username>++ or <username>-- or karma <username> or karma"
 
