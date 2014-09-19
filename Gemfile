@@ -10,6 +10,8 @@ gem 'nagiosharder'
 gem 'escape'
 gem 'time_ago_in_words'
 gem "ruby-fogbugz"
+gem "mechanize"
+gem "bitly"
 
 group :test do
   gem "rspec"
