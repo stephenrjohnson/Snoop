@@ -14,7 +14,7 @@ class UrbanDictionary < CinchPlugin
 
   def search(query)
       url = URI.encode "http://www.urbandictionary.com/define.php?term=#{CGI::escape(query)}"
-      response = Nokogiri.HTML(open url).at_css('.definition')
+      response = Nokogiri.HTML(open url).at_css('.meaning')
       if response
         "Urban Dictionary: #{response.text.strip}"
       else
