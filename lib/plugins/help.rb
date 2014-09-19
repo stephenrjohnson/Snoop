@@ -9,7 +9,7 @@ class Help < CinchPlugin
       help_message = plugin.class.help
       if help_message
         name = plugin.class.plugin_name
-        m.reply "#{help_message}"
+        m.user.send "#{help_message}"
       end
     end
   end
