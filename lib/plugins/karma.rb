@@ -21,24 +21,22 @@ class Karma < CinchPlugin
   end
 
   def increment(m, nick)
-    puts "In increment"
     if nick == @bot.nick
       m.reply "Increasing my karma would result in overflow."
     elsif nick == m.user.nick
       m.reply "Just keep patting yourself on the back there, sport."
-    else
+    elsif nick != ""
       update_user(nick) { |nick| @users[nick] += 1 }
       show_scores(m, nick)
     end
   end
 
   def decrement(m, nick)
-     puts "In deccrement"
     if nick == @bot.nick
       m.reply "I wouldn't do that if I were you..."
     elsif nick == m.user.nick
       m.reply "There are special rooms on this network for self-flagellation."
-    else
+    elsif nick != ""
       update_user(nick) { |nick| @users[nick] -= 1 }
       show_scores(m, nick)
     end
@@ -46,14 +44,14 @@ class Karma < CinchPlugin
 
   def show_scores(m, nick)
      if nick != ""
-	 m.reply "#{ nick } has #{ @users[nick] } awesome points."
+       m.reply "#{ nick } has #{ @users[nick] } awesome points."
      else
       sorted_users = @users.sort_by { |k, v| v }
       top_scores   = sorted_users.take(5)
       top_scores.each { |nick, score| m.reply "#{ nick } has #{ @users[nick] } awesome points." }
      end
   end
-  
+
   def update_user(nick)
     yield(nick)
     save
