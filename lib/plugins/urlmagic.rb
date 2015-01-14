@@ -17,20 +17,20 @@ include Cinch::Plugin
         title = page.title.gsub(/[\r\n\t]/, '')
       rescue
         title nil
-	debug "could not get title"
+        debug "could not get title"
       end
-      
+
       shortURL = ""
       if url.length > 80
         Bitly.use_api_version_3
-	bitly = Bitly.new('o_7ao1emfe9u', 'R_b29e38be56eb1f04b9d8d491a4f5b344')
-	shortURL = bitly.shorten(url).short_url
-      end
-      unless title.nil?
-        m.reply "\"#{title}\""
-        m.reply "#{shortURL}"
-      else
-        m.reply "#{shortURL}"
+        bitly = Bitly.new('o_7ao1emfe9u', 'R_b29e38be56eb1f04b9d8d491a4f5b344')
+        shortURL = bitly.shorten(url).short_url
+        unless title.nil?
+         m.reply "\"#{title}\""
+         m.reply "#{shortURL}"
+        else
+          m.reply "#{shortURL}"
+        end
       end
    end
 end
