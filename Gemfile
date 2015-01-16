@@ -12,6 +12,7 @@ gem 'time_ago_in_words'
 gem "ruby-fogbugz"
 gem "mechanize"
 gem "bitly"
+gem 'tzinfo'
 
 group :test do
   gem "rspec"
